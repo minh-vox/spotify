@@ -1,0 +1,39 @@
+{
+	"Data class": {
+		"prefix": "dc",
+		"body": [
+			"import 'package:freezed_annotation/freezed_annotation.dart';",
+			"",
+			"part '${TM_FILENAME_BASE}.freezed.dart';",
+			"part '${TM_FILENAME_BASE}.g.dart';",
+			"",
+			"@freezed",
+			"class ${TM_FILENAME_BASE/(^|_)([^_]*)/${2:/capitalize}/g} with _$${TM_FILENAME_BASE/(^|_)([^_]*)/${2:/capitalize}/g} {",
+  			"  const factory ${TM_FILENAME_BASE/(^|_)([^_]*)/${2:/capitalize}/g}({",
+			"    $1",
+			"  }) = _${TM_FILENAME_BASE/(^|_)([^_]*)/${2:/capitalize}/g};",
+			"",
+  			"  factory ${TM_FILENAME_BASE/(^|_)([^_]*)/${2:/capitalize}/g}.fromJson(Map<String, dynamic> json) => _$${TM_FILENAME_BASE/(^|_)([^_]*)/${2:/capitalize}/g}FromJson(json);",
+			"}",
+			"",
+		],
+		"description": "Data class"
+	},
+	"Entity class": {
+		"prefix": "ec",
+		"body": [
+			"import 'package:freezed_annotation/freezed_annotation.dart';",
+			"",
+			"part '${TM_FILENAME_BASE}.freezed.dart';",
+			"",
+			"@freezed",
+			"class ${TM_FILENAME_BASE/(^|_)([^_]*)/${2:/capitalize}/g} with _$${TM_FILENAME_BASE/(^|_)([^_]*)/${2:/capitalize}/g} {",
+  			"  const factory ${TM_FILENAME_BASE/(^|_)([^_]*)/${2:/capitalize}/g}({",
+			"    $1",
+			"  }) = _${TM_FILENAME_BASE/(^|_)([^_]*)/${2:/capitalize}/g};",
+			"}",
+			"",
+		],
+		"description": "Entity class"
+	},
+}
