@@ -6,36 +6,36 @@ import '../../domain.dart';
 part 'register_use_case.freezed.dart';
 
 @injectable
-class RegisterUseCase extends BaseUseCase<SignInInput, SignInOutput> {
+class RegisterUseCase extends BaseUseCase<RegisterInput, RegisterOutput> {
   RegisterUseCase(this._repository);
 
   final Repository _repository;
 
   @protected
   @override
-  Future<SignInOutput> buildUseCase(SignInInput input) async {
+  Future<RegisterOutput> buildUseCase(RegisterInput input) async {
     await _repository.register(
       email: input.email,
       password: input.password,
       name: input.name,
     );
 
-    return SignInOutput();
+    return RegisterOutput();
   }
 }
 
 @freezed
-class SignInInput extends BaseInput with _$SignInInput {
-  const factory SignInInput({
+class RegisterInput extends BaseInput with _$RegisterInput {
+  const factory RegisterInput({
     required String email,
     required String password,
     required String name,
-  }) = _SignInInput;
+  }) = _RegisterInput;
 }
 
 @freezed
-class SignInOutput extends BaseOutput with _$SignInOutput {
-  const SignInOutput._();
+class RegisterOutput extends BaseOutput with _$RegisterOutput {
+  const RegisterOutput._();
 
-  const factory SignInOutput() = _SignInOutput;
+  const factory RegisterOutput() = _RegisterOutput;
 }

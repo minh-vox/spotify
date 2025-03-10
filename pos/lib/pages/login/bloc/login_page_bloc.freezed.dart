@@ -15,103 +15,109 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$PasswordVisibility {}
+mixin _$LoginPasswordVisibility {}
 
 /// @nodoc
-abstract class $PasswordVisibilityCopyWith<$Res> {
-  factory $PasswordVisibilityCopyWith(
-          PasswordVisibility value, $Res Function(PasswordVisibility) then) =
-      _$PasswordVisibilityCopyWithImpl<$Res, PasswordVisibility>;
+abstract class $LoginPasswordVisibilityCopyWith<$Res> {
+  factory $LoginPasswordVisibilityCopyWith(LoginPasswordVisibility value,
+          $Res Function(LoginPasswordVisibility) then) =
+      _$LoginPasswordVisibilityCopyWithImpl<$Res, LoginPasswordVisibility>;
 }
 
 /// @nodoc
-class _$PasswordVisibilityCopyWithImpl<$Res, $Val extends PasswordVisibility>
-    implements $PasswordVisibilityCopyWith<$Res> {
-  _$PasswordVisibilityCopyWithImpl(this._value, this._then);
+class _$LoginPasswordVisibilityCopyWithImpl<$Res,
+        $Val extends LoginPasswordVisibility>
+    implements $LoginPasswordVisibilityCopyWith<$Res> {
+  _$LoginPasswordVisibilityCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of PasswordVisibility
+  /// Create a copy of LoginPasswordVisibility
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$PasswordVisibilityImplCopyWith<$Res> {
-  factory _$$PasswordVisibilityImplCopyWith(_$PasswordVisibilityImpl value,
-          $Res Function(_$PasswordVisibilityImpl) then) =
-      __$$PasswordVisibilityImplCopyWithImpl<$Res>;
+abstract class _$$LoginPasswordVisibilityImplCopyWith<$Res> {
+  factory _$$LoginPasswordVisibilityImplCopyWith(
+          _$LoginPasswordVisibilityImpl value,
+          $Res Function(_$LoginPasswordVisibilityImpl) then) =
+      __$$LoginPasswordVisibilityImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$PasswordVisibilityImplCopyWithImpl<$Res>
-    extends _$PasswordVisibilityCopyWithImpl<$Res, _$PasswordVisibilityImpl>
-    implements _$$PasswordVisibilityImplCopyWith<$Res> {
-  __$$PasswordVisibilityImplCopyWithImpl(_$PasswordVisibilityImpl _value,
-      $Res Function(_$PasswordVisibilityImpl) _then)
+class __$$LoginPasswordVisibilityImplCopyWithImpl<$Res>
+    extends _$LoginPasswordVisibilityCopyWithImpl<$Res,
+        _$LoginPasswordVisibilityImpl>
+    implements _$$LoginPasswordVisibilityImplCopyWith<$Res> {
+  __$$LoginPasswordVisibilityImplCopyWithImpl(
+      _$LoginPasswordVisibilityImpl _value,
+      $Res Function(_$LoginPasswordVisibilityImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of PasswordVisibility
+  /// Create a copy of LoginPasswordVisibility
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$PasswordVisibilityImpl implements _PasswordVisibility {
-  const _$PasswordVisibilityImpl();
+class _$LoginPasswordVisibilityImpl implements _LoginPasswordVisibility {
+  const _$LoginPasswordVisibilityImpl();
 
   @override
   String toString() {
-    return 'PasswordVisibility()';
+    return 'LoginPasswordVisibility()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PasswordVisibilityImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$LoginPasswordVisibilityImpl);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 }
 
-abstract class _PasswordVisibility implements PasswordVisibility {
-  const factory _PasswordVisibility() = _$PasswordVisibilityImpl;
+abstract class _LoginPasswordVisibility implements LoginPasswordVisibility {
+  const factory _LoginPasswordVisibility() = _$LoginPasswordVisibilityImpl;
 }
 
 /// @nodoc
-mixin _$LoginUser {
+mixin _$LoginAccount {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
 
-  /// Create a copy of LoginUser
+  /// Create a copy of LoginAccount
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LoginUserCopyWith<LoginUser> get copyWith =>
+  $LoginAccountCopyWith<LoginAccount> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginUserCopyWith<$Res> {
-  factory $LoginUserCopyWith(LoginUser value, $Res Function(LoginUser) then) =
-      _$LoginUserCopyWithImpl<$Res, LoginUser>;
+abstract class $LoginAccountCopyWith<$Res> {
+  factory $LoginAccountCopyWith(
+          LoginAccount value, $Res Function(LoginAccount) then) =
+      _$LoginAccountCopyWithImpl<$Res, LoginAccount>;
   @useResult
   $Res call({String email, String password});
 }
 
 /// @nodoc
-class _$LoginUserCopyWithImpl<$Res, $Val extends LoginUser>
-    implements $LoginUserCopyWith<$Res> {
-  _$LoginUserCopyWithImpl(this._value, this._then);
+class _$LoginAccountCopyWithImpl<$Res, $Val extends LoginAccount>
+    implements $LoginAccountCopyWith<$Res> {
+  _$LoginAccountCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LoginUser
+  /// Create a copy of LoginAccount
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -133,25 +139,25 @@ class _$LoginUserCopyWithImpl<$Res, $Val extends LoginUser>
 }
 
 /// @nodoc
-abstract class _$$loginUserImplCopyWith<$Res>
-    implements $LoginUserCopyWith<$Res> {
-  factory _$$loginUserImplCopyWith(
-          _$loginUserImpl value, $Res Function(_$loginUserImpl) then) =
-      __$$loginUserImplCopyWithImpl<$Res>;
+abstract class _$$LoginAccountImplCopyWith<$Res>
+    implements $LoginAccountCopyWith<$Res> {
+  factory _$$LoginAccountImplCopyWith(
+          _$LoginAccountImpl value, $Res Function(_$LoginAccountImpl) then) =
+      __$$LoginAccountImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email, String password});
 }
 
 /// @nodoc
-class __$$loginUserImplCopyWithImpl<$Res>
-    extends _$LoginUserCopyWithImpl<$Res, _$loginUserImpl>
-    implements _$$loginUserImplCopyWith<$Res> {
-  __$$loginUserImplCopyWithImpl(
-      _$loginUserImpl _value, $Res Function(_$loginUserImpl) _then)
+class __$$LoginAccountImplCopyWithImpl<$Res>
+    extends _$LoginAccountCopyWithImpl<$Res, _$LoginAccountImpl>
+    implements _$$LoginAccountImplCopyWith<$Res> {
+  __$$LoginAccountImplCopyWithImpl(
+      _$LoginAccountImpl _value, $Res Function(_$LoginAccountImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LoginUser
+  /// Create a copy of LoginAccount
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -159,7 +165,7 @@ class __$$loginUserImplCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_$loginUserImpl(
+    return _then(_$LoginAccountImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -174,8 +180,8 @@ class __$$loginUserImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$loginUserImpl implements _loginUser {
-  const _$loginUserImpl({required this.email, required this.password});
+class _$LoginAccountImpl implements _LoginAccount {
+  const _$LoginAccountImpl({required this.email, required this.password});
 
   @override
   final String email;
@@ -184,14 +190,14 @@ class _$loginUserImpl implements _loginUser {
 
   @override
   String toString() {
-    return 'LoginUser(email: $email, password: $password)';
+    return 'LoginAccount(email: $email, password: $password)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$loginUserImpl &&
+            other is _$LoginAccountImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password));
@@ -200,30 +206,30 @@ class _$loginUserImpl implements _loginUser {
   @override
   int get hashCode => Object.hash(runtimeType, email, password);
 
-  /// Create a copy of LoginUser
+  /// Create a copy of LoginAccount
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$loginUserImplCopyWith<_$loginUserImpl> get copyWith =>
-      __$$loginUserImplCopyWithImpl<_$loginUserImpl>(this, _$identity);
+  _$$LoginAccountImplCopyWith<_$LoginAccountImpl> get copyWith =>
+      __$$LoginAccountImplCopyWithImpl<_$LoginAccountImpl>(this, _$identity);
 }
 
-abstract class _loginUser implements LoginUser {
-  const factory _loginUser(
+abstract class _LoginAccount implements LoginAccount {
+  const factory _LoginAccount(
       {required final String email,
-      required final String password}) = _$loginUserImpl;
+      required final String password}) = _$LoginAccountImpl;
 
   @override
   String get email;
   @override
   String get password;
 
-  /// Create a copy of LoginUser
+  /// Create a copy of LoginAccount
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$loginUserImplCopyWith<_$loginUserImpl> get copyWith =>
+  _$$LoginAccountImplCopyWith<_$LoginAccountImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

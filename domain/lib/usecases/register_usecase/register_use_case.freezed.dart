@@ -16,39 +16,39 @@ final _privateConstructorUsedError = UnsupportedError(
 );
 
 /// @nodoc
-mixin _$SignInInput {
+mixin _$RegisterInput {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
-  /// Create a copy of SignInInput
+  /// Create a copy of RegisterInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SignInInputCopyWith<SignInInput> get copyWith =>
+  $RegisterInputCopyWith<RegisterInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignInInputCopyWith<$Res> {
-  factory $SignInInputCopyWith(
-    SignInInput value,
-    $Res Function(SignInInput) then,
-  ) = _$SignInInputCopyWithImpl<$Res, SignInInput>;
+abstract class $RegisterInputCopyWith<$Res> {
+  factory $RegisterInputCopyWith(
+    RegisterInput value,
+    $Res Function(RegisterInput) then,
+  ) = _$RegisterInputCopyWithImpl<$Res, RegisterInput>;
   @useResult
   $Res call({String email, String password, String name});
 }
 
 /// @nodoc
-class _$SignInInputCopyWithImpl<$Res, $Val extends SignInInput>
-    implements $SignInInputCopyWith<$Res> {
-  _$SignInInputCopyWithImpl(this._value, this._then);
+class _$RegisterInputCopyWithImpl<$Res, $Val extends RegisterInput>
+    implements $RegisterInputCopyWith<$Res> {
+  _$RegisterInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SignInInput
+  /// Create a copy of RegisterInput
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -81,27 +81,27 @@ class _$SignInInputCopyWithImpl<$Res, $Val extends SignInInput>
 }
 
 /// @nodoc
-abstract class _$$SignInInputImplCopyWith<$Res>
-    implements $SignInInputCopyWith<$Res> {
-  factory _$$SignInInputImplCopyWith(
-    _$SignInInputImpl value,
-    $Res Function(_$SignInInputImpl) then,
-  ) = __$$SignInInputImplCopyWithImpl<$Res>;
+abstract class _$$RegisterInputImplCopyWith<$Res>
+    implements $RegisterInputCopyWith<$Res> {
+  factory _$$RegisterInputImplCopyWith(
+    _$RegisterInputImpl value,
+    $Res Function(_$RegisterInputImpl) then,
+  ) = __$$RegisterInputImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email, String password, String name});
 }
 
 /// @nodoc
-class __$$SignInInputImplCopyWithImpl<$Res>
-    extends _$SignInInputCopyWithImpl<$Res, _$SignInInputImpl>
-    implements _$$SignInInputImplCopyWith<$Res> {
-  __$$SignInInputImplCopyWithImpl(
-    _$SignInInputImpl _value,
-    $Res Function(_$SignInInputImpl) _then,
+class __$$RegisterInputImplCopyWithImpl<$Res>
+    extends _$RegisterInputCopyWithImpl<$Res, _$RegisterInputImpl>
+    implements _$$RegisterInputImplCopyWith<$Res> {
+  __$$RegisterInputImplCopyWithImpl(
+    _$RegisterInputImpl _value,
+    $Res Function(_$RegisterInputImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of SignInInput
+  /// Create a copy of RegisterInput
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -111,7 +111,7 @@ class __$$SignInInputImplCopyWithImpl<$Res>
     Object? name = null,
   }) {
     return _then(
-      _$SignInInputImpl(
+      _$RegisterInputImpl(
         email:
             null == email
                 ? _value.email
@@ -134,8 +134,8 @@ class __$$SignInInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignInInputImpl implements _SignInInput {
-  const _$SignInInputImpl({
+class _$RegisterInputImpl implements _RegisterInput {
+  const _$RegisterInputImpl({
     required this.email,
     required this.password,
     required this.name,
@@ -150,14 +150,14 @@ class _$SignInInputImpl implements _SignInInput {
 
   @override
   String toString() {
-    return 'SignInInput(email: $email, password: $password, name: $name)';
+    return 'RegisterInput(email: $email, password: $password, name: $name)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SignInInputImpl &&
+            other is _$RegisterInputImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
@@ -167,21 +167,21 @@ class _$SignInInputImpl implements _SignInInput {
   @override
   int get hashCode => Object.hash(runtimeType, email, password, name);
 
-  /// Create a copy of SignInInput
+  /// Create a copy of RegisterInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SignInInputImplCopyWith<_$SignInInputImpl> get copyWith =>
-      __$$SignInInputImplCopyWithImpl<_$SignInInputImpl>(this, _$identity);
+  _$$RegisterInputImplCopyWith<_$RegisterInputImpl> get copyWith =>
+      __$$RegisterInputImplCopyWithImpl<_$RegisterInputImpl>(this, _$identity);
 }
 
-abstract class _SignInInput implements SignInInput {
-  const factory _SignInInput({
+abstract class _RegisterInput implements RegisterInput {
+  const factory _RegisterInput({
     required final String email,
     required final String password,
     required final String name,
-  }) = _$SignInInputImpl;
+  }) = _$RegisterInputImpl;
 
   @override
   String get email;
@@ -190,81 +190,81 @@ abstract class _SignInInput implements SignInInput {
   @override
   String get name;
 
-  /// Create a copy of SignInInput
+  /// Create a copy of RegisterInput
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SignInInputImplCopyWith<_$SignInInputImpl> get copyWith =>
+  _$$RegisterInputImplCopyWith<_$RegisterInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$SignInOutput {}
+mixin _$RegisterOutput {}
 
 /// @nodoc
-abstract class $SignInOutputCopyWith<$Res> {
-  factory $SignInOutputCopyWith(
-    SignInOutput value,
-    $Res Function(SignInOutput) then,
-  ) = _$SignInOutputCopyWithImpl<$Res, SignInOutput>;
+abstract class $RegisterOutputCopyWith<$Res> {
+  factory $RegisterOutputCopyWith(
+    RegisterOutput value,
+    $Res Function(RegisterOutput) then,
+  ) = _$RegisterOutputCopyWithImpl<$Res, RegisterOutput>;
 }
 
 /// @nodoc
-class _$SignInOutputCopyWithImpl<$Res, $Val extends SignInOutput>
-    implements $SignInOutputCopyWith<$Res> {
-  _$SignInOutputCopyWithImpl(this._value, this._then);
+class _$RegisterOutputCopyWithImpl<$Res, $Val extends RegisterOutput>
+    implements $RegisterOutputCopyWith<$Res> {
+  _$RegisterOutputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SignInOutput
+  /// Create a copy of RegisterOutput
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$SignInOutputImplCopyWith<$Res> {
-  factory _$$SignInOutputImplCopyWith(
-    _$SignInOutputImpl value,
-    $Res Function(_$SignInOutputImpl) then,
-  ) = __$$SignInOutputImplCopyWithImpl<$Res>;
+abstract class _$$RegisterOutputImplCopyWith<$Res> {
+  factory _$$RegisterOutputImplCopyWith(
+    _$RegisterOutputImpl value,
+    $Res Function(_$RegisterOutputImpl) then,
+  ) = __$$RegisterOutputImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SignInOutputImplCopyWithImpl<$Res>
-    extends _$SignInOutputCopyWithImpl<$Res, _$SignInOutputImpl>
-    implements _$$SignInOutputImplCopyWith<$Res> {
-  __$$SignInOutputImplCopyWithImpl(
-    _$SignInOutputImpl _value,
-    $Res Function(_$SignInOutputImpl) _then,
+class __$$RegisterOutputImplCopyWithImpl<$Res>
+    extends _$RegisterOutputCopyWithImpl<$Res, _$RegisterOutputImpl>
+    implements _$$RegisterOutputImplCopyWith<$Res> {
+  __$$RegisterOutputImplCopyWithImpl(
+    _$RegisterOutputImpl _value,
+    $Res Function(_$RegisterOutputImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of SignInOutput
+  /// Create a copy of RegisterOutput
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$SignInOutputImpl extends _SignInOutput {
-  const _$SignInOutputImpl() : super._();
+class _$RegisterOutputImpl extends _RegisterOutput {
+  const _$RegisterOutputImpl() : super._();
 
   @override
   String toString() {
-    return 'SignInOutput()';
+    return 'RegisterOutput()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SignInOutputImpl);
+        (other.runtimeType == runtimeType && other is _$RegisterOutputImpl);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 }
 
-abstract class _SignInOutput extends SignInOutput {
-  const factory _SignInOutput() = _$SignInOutputImpl;
-  const _SignInOutput._() : super._();
+abstract class _RegisterOutput extends RegisterOutput {
+  const factory _RegisterOutput() = _$RegisterOutputImpl;
+  const _RegisterOutput._() : super._();
 }

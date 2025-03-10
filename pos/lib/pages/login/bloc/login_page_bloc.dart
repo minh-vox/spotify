@@ -10,12 +10,13 @@ part 'login_page_bloc.freezed.dart';
 @injectable
 class LoginPageBloc extends Bloc<LoginPageEvent, LoginPageState> {
   LoginPageBloc(this._signInUseCase) : super(const LoginPageState()) {
-    on<PasswordVisibility>(
+    on<LoginPasswordVisibility>(
       (event, emit) {
         emit(state.copyWith(isPasswordObscured: !state.isPasswordObscured));
       },
     );
-    on<LoginUser>(
+
+    on<LoginAccount>(
       (event, emit) async {
         emit(state.copyWith(status: LoginStatus.loading, errorMessage: ""));
 

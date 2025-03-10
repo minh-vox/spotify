@@ -75,8 +75,7 @@ class IntroPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const RegisterPage(),
-                              ),
+                                  builder: (context) => const RegisterPage()),
                             );
                           },
                           title: 'Register',

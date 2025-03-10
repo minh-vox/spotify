@@ -7,6 +7,6 @@ class RegisterPageState with _$RegisterPageState {
   const factory RegisterPageState({
     @Default(true) bool isPasswordObscured,
     @Default(RegisterStatus.initial) RegisterStatus status,
-    @Default("") String message,
+    @Default("") String errorMessage,
   }) = _RegisterPageState;
 }

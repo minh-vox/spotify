@@ -25,9 +25,10 @@ extension GetItInjectableX on _i174.GetIt {
       environment,
       environmentFilter,
     );
-    gh.factory<_i127.RegisterPageBloc>(() => _i127.RegisterPageBloc());
     gh.factory<_i391.LoginPageBloc>(
         () => _i391.LoginPageBloc(gh<_i494.SignInUseCase>()));
+    gh.factory<_i127.RegisterPageBloc>(
+        () => _i127.RegisterPageBloc(gh<_i494.RegisterUseCase>()));
     return this;
   }
 }

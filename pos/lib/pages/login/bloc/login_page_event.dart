@@ -5,14 +5,15 @@ sealed class LoginPageEvent {
 }
 
 @freezed
-class PasswordVisibility extends LoginPageEvent with _$PasswordVisibility {
-  const factory PasswordVisibility() = _PasswordVisibility;
+class LoginPasswordVisibility extends LoginPageEvent
+    with _$LoginPasswordVisibility {
+  const factory LoginPasswordVisibility() = _LoginPasswordVisibility;
 }
 
 @freezed
-class LoginUser extends LoginPageEvent with _$LoginUser {
-  const factory LoginUser({
+class LoginAccount extends LoginPageEvent with _$LoginAccount {
+  const factory LoginAccount({
     required String email,
     required String password,
-  }) = _loginUser;
+  }) = _LoginAccount;
 }

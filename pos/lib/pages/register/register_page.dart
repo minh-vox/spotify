@@ -12,7 +12,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends BasePageState<RegisterPage, RegisterPageBloc> {
-  final TextEditingController _userName = TextEditingController();
+  final TextEditingController _name = TextEditingController();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
@@ -40,7 +40,7 @@ class _RegisterPageState extends BasePageState<RegisterPage, RegisterPageBloc> {
                 body: Column(
                   children: [
                     BasicTextField(
-                      controller: _userName,
+                      controller: _name,
                       hintText: 'Full Name',
                     ),
                     const SizedBox(
@@ -64,8 +64,9 @@ class _RegisterPageState extends BasePageState<RegisterPage, RegisterPageBloc> {
                           hintText: 'Password',
                           obscureText: state.isPasswordObscured,
                           onTap: () {
-                            return context.read<RegisterPageBloc>().add(
-                                const RegisterPageEvent.passwordVisibility());
+                            context.read<RegisterPageBloc>().add(
+                                  const RegisterPasswordVisibility(),
+                                );
                           },
                         );
                       },
@@ -73,9 +74,43 @@ class _RegisterPageState extends BasePageState<RegisterPage, RegisterPageBloc> {
                     const SizedBox(
                       height: 40,
                     ),
-                    BasicAppButton(
-                      onPressed: () {},
-                      title: 'Create Account',
+                    BlocListener<RegisterPageBloc, RegisterPageState>(
+                      listener: (context, state) {
+                        if (state.status == RegisterStatus.success) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LoginPage()),
+                          );
+                        } else if (state.status == RegisterStatus.failure &&
+                            state.errorMessage.isNotEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(state.errorMessage),
+                              behavior: SnackBarBehavior.floating,
+                            ),
+                          );
+                        }
+                      },
+                      child: BlocBuilder<RegisterPageBloc, RegisterPageState>(
+                        buildWhen: (previous, current) {
+                          return previous.status != current.status;
+                        },
+                        builder: (context, state) {
+                          return BasicAppButton(
+                            onPressed: () {
+                              context.read<RegisterPageBloc>().add(
+                                    RegisterAccount(
+                                      email: _email.text,
+                                      password: _password.text,
+                                      name: _name.text,
+                                    ),
+                                  );
+                            },
+                            title: 'Create Account',
+                          );
+                        },
+                      ),
                     ),
                   ],
                 ),

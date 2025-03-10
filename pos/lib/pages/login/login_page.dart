@@ -58,7 +58,7 @@ class _LoginPageState extends BasePageState<LoginPage, LoginPageBloc> {
                           hintText: 'Password',
                           onTap: () {
                             context.read<LoginPageBloc>().add(
-                                  const PasswordVisibility(),
+                                  const LoginPasswordVisibility(),
                                 );
                           },
                         );
@@ -102,7 +102,7 @@ class _LoginPageState extends BasePageState<LoginPage, LoginPageBloc> {
                           return BasicAppButton(
                             onPressed: () {
                               context.read<LoginPageBloc>().add(
-                                    LoginUser(
+                                    LoginAccount(
                                       email: _email.text,
                                       password: _password.text,
                                     ),
