@@ -11,7 +11,7 @@ class RegisterPage extends StatefulWidget {
   State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _RegisterPageState extends BasePageState<RegisterPage, RegisterBloc> {
+class _RegisterPageState extends BasePageState<RegisterPage, RegisterPageBloc> {
   final TextEditingController _userName = TextEditingController();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
@@ -53,7 +53,7 @@ class _RegisterPageState extends BasePageState<RegisterPage, RegisterBloc> {
                     const SizedBox(
                       height: 20,
                     ),
-                    BlocBuilder<RegisterBloc, RegisterState>(
+                    BlocBuilder<RegisterPageBloc, RegisterPageState>(
                       buildWhen: (previous, current) {
                         return previous.isPasswordObscured !=
                             current.isPasswordObscured;
@@ -64,9 +64,8 @@ class _RegisterPageState extends BasePageState<RegisterPage, RegisterBloc> {
                           hintText: 'Password',
                           obscureText: state.isPasswordObscured,
                           onTap: () {
-                            return context
-                                .read<RegisterBloc>()
-                                .add(const RegisterEvent.passwordVisibility());
+                            return context.read<RegisterPageBloc>().add(
+                                const RegisterPageEvent.passwordVisibility());
                           },
                         );
                       },

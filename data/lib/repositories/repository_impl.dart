@@ -13,4 +13,17 @@ class RepositoryImpl implements Repository {
   Future<void> signIn({required String email, required String password}) async {
     await _supabaseService.signIn(email: email, password: password);
   }
+
+  @override
+  Future<void> register({
+    required String email,
+    required String password,
+    required String name,
+  }) async {
+    await _supabaseService.register(
+      email: email,
+      password: password,
+      name: name,
+    );
+  }
 }

@@ -1,6 +1,6 @@
 {
   "dart.flutterSdkPath": ".fvm/versions/3.29.1",
-  "cSpell.words": ["cupertino", "supabase"],
+  "cSpell.words": ["cupertino", "Satoshi", "supabase"],
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,

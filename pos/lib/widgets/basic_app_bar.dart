@@ -32,6 +32,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
           height: 40,
           width: 40,
           decoration: BoxDecoration(
+            // ignore: deprecated_member_use
             color: Colors.black.withOpacity(0.03),
             shape: BoxShape.circle,
           ),

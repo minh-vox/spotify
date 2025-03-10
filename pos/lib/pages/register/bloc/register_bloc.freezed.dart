@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$RegisterEvent {
+mixin _$RegisterPageEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() passwordVisibility,
@@ -51,23 +51,23 @@ mixin _$RegisterEvent {
 }
 
 /// @nodoc
-abstract class $RegisterEventCopyWith<$Res> {
-  factory $RegisterEventCopyWith(
-          RegisterEvent value, $Res Function(RegisterEvent) then) =
-      _$RegisterEventCopyWithImpl<$Res, RegisterEvent>;
+abstract class $RegisterPageEventCopyWith<$Res> {
+  factory $RegisterPageEventCopyWith(
+          RegisterPageEvent value, $Res Function(RegisterPageEvent) then) =
+      _$RegisterPageEventCopyWithImpl<$Res, RegisterPageEvent>;
 }
 
 /// @nodoc
-class _$RegisterEventCopyWithImpl<$Res, $Val extends RegisterEvent>
-    implements $RegisterEventCopyWith<$Res> {
-  _$RegisterEventCopyWithImpl(this._value, this._then);
+class _$RegisterPageEventCopyWithImpl<$Res, $Val extends RegisterPageEvent>
+    implements $RegisterPageEventCopyWith<$Res> {
+  _$RegisterPageEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of RegisterEvent
+  /// Create a copy of RegisterPageEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -80,13 +80,13 @@ abstract class _$$PasswordVisibilityImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$PasswordVisibilityImplCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res, _$PasswordVisibilityImpl>
+    extends _$RegisterPageEventCopyWithImpl<$Res, _$PasswordVisibilityImpl>
     implements _$$PasswordVisibilityImplCopyWith<$Res> {
   __$$PasswordVisibilityImplCopyWithImpl(_$PasswordVisibilityImpl _value,
       $Res Function(_$PasswordVisibilityImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of RegisterEvent
+  /// Create a copy of RegisterPageEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -97,7 +97,7 @@ class _$PasswordVisibilityImpl implements _PasswordVisibility {
 
   @override
   String toString() {
-    return 'RegisterEvent.passwordVisibility()';
+    return 'RegisterPageEvent.passwordVisibility()';
   }
 
   @override
@@ -166,137 +166,178 @@ class _$PasswordVisibilityImpl implements _PasswordVisibility {
   }
 }
 
-abstract class _PasswordVisibility implements RegisterEvent {
+abstract class _PasswordVisibility implements RegisterPageEvent {
   const factory _PasswordVisibility() = _$PasswordVisibilityImpl;
 }
 
 /// @nodoc
-mixin _$RegisterState {
+mixin _$RegisterPageState {
   bool get isPasswordObscured => throw _privateConstructorUsedError;
+  RegisterStatus get status => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
-  /// Create a copy of RegisterState
+  /// Create a copy of RegisterPageState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RegisterStateCopyWith<RegisterState> get copyWith =>
+  $RegisterPageStateCopyWith<RegisterPageState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RegisterStateCopyWith<$Res> {
-  factory $RegisterStateCopyWith(
-          RegisterState value, $Res Function(RegisterState) then) =
-      _$RegisterStateCopyWithImpl<$Res, RegisterState>;
+abstract class $RegisterPageStateCopyWith<$Res> {
+  factory $RegisterPageStateCopyWith(
+          RegisterPageState value, $Res Function(RegisterPageState) then) =
+      _$RegisterPageStateCopyWithImpl<$Res, RegisterPageState>;
   @useResult
-  $Res call({bool isPasswordObscured});
+  $Res call({bool isPasswordObscured, RegisterStatus status, String message});
 }
 
 /// @nodoc
-class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
-    implements $RegisterStateCopyWith<$Res> {
-  _$RegisterStateCopyWithImpl(this._value, this._then);
+class _$RegisterPageStateCopyWithImpl<$Res, $Val extends RegisterPageState>
+    implements $RegisterPageStateCopyWith<$Res> {
+  _$RegisterPageStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of RegisterState
+  /// Create a copy of RegisterPageState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? isPasswordObscured = null,
+    Object? status = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
       isPasswordObscured: null == isPasswordObscured
           ? _value.isPasswordObscured
           : isPasswordObscured // ignore: cast_nullable_to_non_nullable
               as bool,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as RegisterStatus,
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$RegisterStateImplCopyWith<$Res>
-    implements $RegisterStateCopyWith<$Res> {
-  factory _$$RegisterStateImplCopyWith(
-          _$RegisterStateImpl value, $Res Function(_$RegisterStateImpl) then) =
-      __$$RegisterStateImplCopyWithImpl<$Res>;
+abstract class _$$RegisterPageStateImplCopyWith<$Res>
+    implements $RegisterPageStateCopyWith<$Res> {
+  factory _$$RegisterPageStateImplCopyWith(_$RegisterPageStateImpl value,
+          $Res Function(_$RegisterPageStateImpl) then) =
+      __$$RegisterPageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isPasswordObscured});
+  $Res call({bool isPasswordObscured, RegisterStatus status, String message});
 }
 
 /// @nodoc
-class __$$RegisterStateImplCopyWithImpl<$Res>
-    extends _$RegisterStateCopyWithImpl<$Res, _$RegisterStateImpl>
-    implements _$$RegisterStateImplCopyWith<$Res> {
-  __$$RegisterStateImplCopyWithImpl(
-      _$RegisterStateImpl _value, $Res Function(_$RegisterStateImpl) _then)
+class __$$RegisterPageStateImplCopyWithImpl<$Res>
+    extends _$RegisterPageStateCopyWithImpl<$Res, _$RegisterPageStateImpl>
+    implements _$$RegisterPageStateImplCopyWith<$Res> {
+  __$$RegisterPageStateImplCopyWithImpl(_$RegisterPageStateImpl _value,
+      $Res Function(_$RegisterPageStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of RegisterState
+  /// Create a copy of RegisterPageState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? isPasswordObscured = null,
+    Object? status = null,
+    Object? message = null,
   }) {
-    return _then(_$RegisterStateImpl(
+    return _then(_$RegisterPageStateImpl(
       isPasswordObscured: null == isPasswordObscured
           ? _value.isPasswordObscured
           : isPasswordObscured // ignore: cast_nullable_to_non_nullable
               as bool,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as RegisterStatus,
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$RegisterStateImpl implements _RegisterState {
-  const _$RegisterStateImpl({this.isPasswordObscured = true});
+class _$RegisterPageStateImpl implements _RegisterPageState {
+  const _$RegisterPageStateImpl(
+      {this.isPasswordObscured = true,
+      this.status = RegisterStatus.initial,
+      this.message = ""});
 
   @override
   @JsonKey()
   final bool isPasswordObscured;
+  @override
+  @JsonKey()
+  final RegisterStatus status;
+  @override
+  @JsonKey()
+  final String message;
 
   @override
   String toString() {
-    return 'RegisterState(isPasswordObscured: $isPasswordObscured)';
+    return 'RegisterPageState(isPasswordObscured: $isPasswordObscured, status: $status, message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RegisterStateImpl &&
+            other is _$RegisterPageStateImpl &&
             (identical(other.isPasswordObscured, isPasswordObscured) ||
-                other.isPasswordObscured == isPasswordObscured));
+                other.isPasswordObscured == isPasswordObscured) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isPasswordObscured);
+  int get hashCode =>
+      Object.hash(runtimeType, isPasswordObscured, status, message);
 
-  /// Create a copy of RegisterState
+  /// Create a copy of RegisterPageState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$RegisterStateImplCopyWith<_$RegisterStateImpl> get copyWith =>
-      __$$RegisterStateImplCopyWithImpl<_$RegisterStateImpl>(this, _$identity);
+  _$$RegisterPageStateImplCopyWith<_$RegisterPageStateImpl> get copyWith =>
+      __$$RegisterPageStateImplCopyWithImpl<_$RegisterPageStateImpl>(
+          this, _$identity);
 }
 
-abstract class _RegisterState implements RegisterState {
-  const factory _RegisterState({final bool isPasswordObscured}) =
-      _$RegisterStateImpl;
+abstract class _RegisterPageState implements RegisterPageState {
+  const factory _RegisterPageState(
+      {final bool isPasswordObscured,
+      final RegisterStatus status,
+      final String message}) = _$RegisterPageStateImpl;
 
   @override
   bool get isPasswordObscured;
+  @override
+  RegisterStatus get status;
+  @override
+  String get message;
 
-  /// Create a copy of RegisterState
+  /// Create a copy of RegisterPageState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RegisterStateImplCopyWith<_$RegisterStateImpl> get copyWith =>
+  _$$RegisterPageStateImplCopyWith<_$RegisterPageStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

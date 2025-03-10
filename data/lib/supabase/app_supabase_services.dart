@@ -18,7 +18,8 @@ class AppSupabaseServices {
       );
 
       final user = response.user;
-      final session = response.session;
+      final session = _supabase.auth.currentSession;
+
       if (user != null) {
         return AuthenticationData(
           jwt: session?.accessToken,
@@ -34,5 +35,22 @@ class AppSupabaseServices {
       throw Exception("Login failed: ${e.toString()}");
     }
     return null;
+  }
+
+  Future<void> register({
+    required String email,
+    required String password,
+    required String name,
+  }) async {
+    try {
+      await _supabase.auth.signUp(
+        email: email,
+        password: password,
+        data: {'name': name}, // Lưu metadata của user
+      );
+    } catch (e) {
+      throw Exception("Register failed: ${e.toString()}");
+    }
+    return;
   }
 }

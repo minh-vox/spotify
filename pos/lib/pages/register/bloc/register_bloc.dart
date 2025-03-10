@@ -7,9 +7,9 @@ part 'register_state.dart';
 part 'register_bloc.freezed.dart';
 
 @injectable
-class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
-  RegisterBloc() : super(const RegisterState()) {
-    on<RegisterEvent>((event, emit) {
+class RegisterPageBloc extends Bloc<RegisterPageEvent, RegisterPageState> {
+  RegisterPageBloc() : super(const RegisterPageState()) {
+    on<RegisterPageEvent>((event, emit) {
       event.map(
         passwordVisibility: (value) {
           emit.call(

@@ -13,8 +13,8 @@ class TabBarWidget extends StatelessWidget {
     return Align(
       alignment: Alignment.center,
       child: TabBar(
-        labelColor: Colors.black, // Màu tab được chọn
-        unselectedLabelColor: Colors.black54, // Màu tab chưa chọn (mờ hơn)
+        labelColor: Colors.black,
+        unselectedLabelColor: Colors.black54,
         dividerHeight: 0,
         controller: tabController,
         isScrollable: true,

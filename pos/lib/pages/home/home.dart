@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../pos.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -40,7 +39,7 @@ class _HomePageState extends State<HomePage>
       ),
       bottomNavigationBar: const BasicBottomBar(),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

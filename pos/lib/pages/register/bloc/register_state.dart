@@ -1,8 +1,12 @@
 part of 'register_bloc.dart';
 
+enum RegisterStatus { initial, loading, success, failure }
+
 @freezed
-class RegisterState with _$RegisterState {
-  const factory RegisterState({
+class RegisterPageState with _$RegisterPageState {
+  const factory RegisterPageState({
     @Default(true) bool isPasswordObscured,
-  }) = _RegisterState;
+    @Default(RegisterStatus.initial) RegisterStatus status,
+    @Default("") String message,
+  }) = _RegisterPageState;
 }

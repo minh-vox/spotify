@@ -81,9 +81,11 @@ class _LoginPageState extends BasePageState<LoginPage, LoginPageBloc> {
                     BlocListener<LoginPageBloc, LoginPageState>(
                       listener: (context, state) {
                         if (state.status == LoginStatus.success) {
-                          Navigator.pushReplacement(
+                          Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(builder: (context) => HomePage()),
+                            MaterialPageRoute(
+                                builder: (context) => const HomePage()),
+                            (route) => false,
                           );
                         } else if (state.status == LoginStatus.failure &&
                             state.errorMessage.isNotEmpty) {

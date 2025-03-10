@@ -1,6 +1,6 @@
 part of 'register_bloc.dart';
 
 @freezed
-class RegisterEvent with _$RegisterEvent {
-  const factory RegisterEvent.passwordVisibility() = _PasswordVisibility;
+class RegisterPageEvent with _$RegisterPageEvent {
+  const factory RegisterPageEvent.passwordVisibility() = _PasswordVisibility;
 }

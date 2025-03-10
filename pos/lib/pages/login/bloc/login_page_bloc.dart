@@ -28,7 +28,9 @@ class LoginPageBloc extends Bloc<LoginPageEvent, LoginPageState> {
           );
 
           emit(state.copyWith(
+            // ignore: unnecessary_null_comparison
             status: user != null ? LoginStatus.success : LoginStatus.failure,
+            // ignore: unnecessary_null_comparison
             errorMessage: user == null ? "Invalid credentials" : "",
           ));
         } catch (e) {

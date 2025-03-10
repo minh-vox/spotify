@@ -57,6 +57,7 @@ class AppTheme {
     sliderTheme: SliderThemeData(
       overlayShape: SliderComponentShape.noOverlay,
       activeTrackColor: const Color(0xffB7B7B7),
+      // ignore: deprecated_member_use
       inactiveTrackColor: Colors.grey.withOpacity(0.3),
       thumbColor: const Color(0xffB7B7B7),
     ),
