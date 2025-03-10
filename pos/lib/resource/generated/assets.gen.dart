@@ -89,14 +89,20 @@ class $AssetsImagesGen {
   /// File path: assets/images/choose_mode_bg.png
   AssetGenImage get chooseModeBg => const AssetGenImage('assets/images/choose_mode_bg.png');
 
+  /// File path: assets/images/headphone.png
+  AssetGenImage get headphone => const AssetGenImage('assets/images/headphone.png');
+
   /// File path: assets/images/home_artist.png
   AssetGenImage get homeArtist => const AssetGenImage('assets/images/home_artist.png');
 
   /// File path: assets/images/intro_bg.png
   AssetGenImage get introBg => const AssetGenImage('assets/images/intro_bg.png');
 
+  /// File path: assets/images/melody.png
+  AssetGenImage get melody => const AssetGenImage('assets/images/melody.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [authBg, chooseModeBg, homeArtist, introBg];
+  List<AssetGenImage> get values => [authBg, chooseModeBg, headphone, homeArtist, introBg, melody];
 }
 
 class Assets {

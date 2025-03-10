@@ -6,8 +6,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import '../../../pos.dart';
-
 part 'register_event.dart';
 part 'register_state.dart';
 part 'register_bloc.freezed.dart';

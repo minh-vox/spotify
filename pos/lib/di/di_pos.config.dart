@@ -11,6 +11,7 @@
 import 'package:domain/domain.dart' as _i494;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
+import 'package:pos/pages/home/bloc/home_page_bloc.dart' as _i767;
 import 'package:pos/pages/login/bloc/login_page_bloc.dart' as _i391;
 import 'package:pos/pages/register/bloc/register_bloc.dart' as _i127;
 
@@ -25,6 +26,7 @@ extension GetItInjectableX on _i174.GetIt {
       environment,
       environmentFilter,
     );
+    gh.factory<_i767.HomePageBloc>(() => _i767.HomePageBloc());
     gh.factory<_i391.LoginPageBloc>(
         () => _i391.LoginPageBloc(gh<_i494.SignInUseCase>()));
     gh.factory<_i127.RegisterPageBloc>(

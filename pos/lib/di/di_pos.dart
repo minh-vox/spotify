@@ -6,5 +6,4 @@ import 'di_pos.config.dart';
 final GetIt getIt = GetIt.instance;
 
 @injectableInit
-// ignore: non_constant_identifier_names
-void configureInjection_pos() => getIt.init();
+Future<void> configureInjection_pos() async => getIt.init();

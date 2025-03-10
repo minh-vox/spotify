@@ -12,6 +12,12 @@ class IntroPage extends StatelessWidget {
       body: Stack(
         children: [
           Align(
+            alignment: Alignment.topCenter,
+            child: Image.asset(
+              Assets.images.headphone.path,
+            ),
+          ),
+          Align(
             alignment: Alignment.topRight,
             child: SvgPicture.asset(
               Assets.icons.topPattern.path,
@@ -24,9 +30,9 @@ class IntroPage extends StatelessWidget {
             ),
           ),
           Align(
-            alignment: Alignment.bottomLeft,
+            alignment: Alignment.bottomCenter,
             child: Image.asset(
-              Assets.images.authBg.path,
+              Assets.images.melody.path,
             ),
           ),
           Align(
@@ -38,12 +44,6 @@ class IntroPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SvgPicture.asset(
-                    Assets.icons.spotifyIcon.path,
-                  ),
-                  const SizedBox(
-                    height: 55,
-                  ),
                   const Text(
                     'Enjoy Listening To Music',
                     style: TextStyle(
