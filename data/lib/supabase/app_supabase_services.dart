@@ -5,7 +5,9 @@ import '../data.dart';
 
 @LazySingleton()
 class AppSupabaseServices {
-  final SupabaseClient _supabase = Supabase.instance.client;
+  final SupabaseClient _supabase;
+
+  AppSupabaseServices(this._supabase);
 
   Future<AuthenticationData?> signIn({
     required String email,
@@ -27,7 +29,7 @@ class AppSupabaseServices {
           user: UserData(
             id: user.id,
             email: user.email,
-            name: user.userMetadata?['name'], // Nếu có metadata
+            name: user.userMetadata?['name'],
           ),
         );
       }
@@ -46,11 +48,24 @@ class AppSupabaseServices {
       await _supabase.auth.signUp(
         email: email,
         password: password,
-        data: {'name': name}, // Lưu metadata của user
+        data: {'name': name},
       );
     } catch (e) {
       throw Exception("Register failed: ${e.toString()}");
     }
     return;
+  }
+
+  Future<List<SongData>> getNewsSongs() async {
+    try {
+      final response = await _supabase
+          .from('Songs')
+          .select()
+          .order('release_date', ascending: false)
+          .limit(5);
+      return response.map((json) => SongData.fromJson(json)).toList();
+    } catch (e) {
+      throw Exception("Error getting recent songs: ${e.toString()}");
+    }
   }
 }

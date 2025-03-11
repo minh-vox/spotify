@@ -1,103 +1,73 @@
+import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
+import 'package:pos/pos.dart';
 
 class NewsSongsWidget extends StatelessWidget {
-  const NewsSongsWidget({super.key});
-
+  const NewsSongsWidget({super.key, required this.songs});
+  final List<SongEntity> songs;
   @override
   Widget build(BuildContext context) {
-    final List<Song> songs = [
-      Song(
-        title: "Song A",
-        artist: "Artist A",
-        duration: 1,
-        releaseDate: DateTime.now(),
-      ),
-      Song(
-        title: "Song A",
-        artist: "Artist A",
-        duration: 1,
-        releaseDate: DateTime.now(),
-      ),
-      Song(
-        title: "Song A",
-        artist: "Artist A",
-        duration: 1,
-        releaseDate: DateTime.now(),
-      ),
-      Song(
-        title: "Song A",
-        artist: "Artist A",
-        duration: 1,
-        releaseDate: DateTime.now(),
-      ),
-      Song(
-        title: "Song A",
-        artist: "Artist A",
-        duration: 1,
-        releaseDate: DateTime.now(),
-      ),
-      Song(
-        title: "Song A",
-        artist: "Artist A",
-        duration: 1,
-        releaseDate: DateTime.now(),
-      ),
-    ];
     return SizedBox(
-      height: 200,
+      height: 250,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         separatorBuilder: (BuildContext context, int index) {
-          return const SizedBox(
-            width: 16,
-          );
+          return const SizedBox(width: 10);
         },
         itemCount: songs.length,
         itemBuilder: (BuildContext context, int index) {
           final song = songs[index];
-          return Container(
-            width: 150,
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: Colors.blueAccent,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  song.title,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 3,
+                child: Stack(
+                  children: [
+                    Container(
+                      width: 160,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 134, 184, 224),
+                        borderRadius: BorderRadius.circular(30),
+                        image: song.coverUrl.isNotEmpty
+                            ? DecorationImage(
+                                image: NetworkImage(song.coverUrl),
+                                fit: BoxFit.cover,
+                              )
+                            : null,
+                      ),
+                      child: Align(
+                        alignment: Alignment.bottomRight,
+                        child: Container(
+                          height: 30,
+                          width: 30,
+                          transform: Matrix4.translationValues(-5, 5, 0),
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: AppColors.darkGrey,
+                          ),
+                          child: const Icon(
+                            Icons.play_arrow_rounded,
+                            color: Colors.white,
+                            size: 24,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                Text(
-                  song.artist,
-                  style: const TextStyle(
-                    color: Colors.white70,
-                  ),
-                ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                song.title,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Text(song.artist),
+            ],
           );
         },
       ),
     );
   }
-}
-
-class Song {
-  final String title;
-  final String artist;
-  final int duration; // Độ dài bài hát (giây)
-  final DateTime releaseDate;
-
-  Song({
-    required this.title,
-    required this.artist,
-    required this.duration,
-    required this.releaseDate,
-  });
 }

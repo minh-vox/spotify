@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 
 import '../pos.dart';
 
-
 class BasicBottomBar extends StatelessWidget implements PreferredSizeWidget {
   const BasicBottomBar({super.key});
 
@@ -28,7 +27,7 @@ class BasicBottomBar extends StatelessWidget implements PreferredSizeWidget {
           Expanded(
             child: IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset(Assets.icons.hidePassIcon.path),
+              icon: SvgPicture.asset(Assets.icons.heartIcon.path),
             ),
           ),
           Expanded(

@@ -83,7 +83,9 @@ abstract class _LoadNewsSongs implements LoadNewsSongs {
 
 /// @nodoc
 mixin _$HomePageState {
-  bool get isLoadingSong => throw _privateConstructorUsedError;
+  LoadSong get isLoadingSong => throw _privateConstructorUsedError;
+  List<SongEntity> get songs => throw _privateConstructorUsedError;
+  String? get errorMessage => throw _privateConstructorUsedError;
 
   /// Create a copy of HomePageState
   /// with the given fields replaced by the non-null parameter values.
@@ -98,7 +100,8 @@ abstract class $HomePageStateCopyWith<$Res> {
           HomePageState value, $Res Function(HomePageState) then) =
       _$HomePageStateCopyWithImpl<$Res, HomePageState>;
   @useResult
-  $Res call({bool isLoadingSong});
+  $Res call(
+      {LoadSong isLoadingSong, List<SongEntity> songs, String? errorMessage});
 }
 
 /// @nodoc
@@ -117,12 +120,22 @@ class _$HomePageStateCopyWithImpl<$Res, $Val extends HomePageState>
   @override
   $Res call({
     Object? isLoadingSong = null,
+    Object? songs = null,
+    Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
       isLoadingSong: null == isLoadingSong
           ? _value.isLoadingSong
           : isLoadingSong // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as LoadSong,
+      songs: null == songs
+          ? _value.songs
+          : songs // ignore: cast_nullable_to_non_nullable
+              as List<SongEntity>,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -135,7 +148,8 @@ abstract class _$$HomePageStateImplCopyWith<$Res>
       __$$HomePageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoadingSong});
+  $Res call(
+      {LoadSong isLoadingSong, List<SongEntity> songs, String? errorMessage});
 }
 
 /// @nodoc
@@ -152,12 +166,22 @@ class __$$HomePageStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoadingSong = null,
+    Object? songs = null,
+    Object? errorMessage = freezed,
   }) {
     return _then(_$HomePageStateImpl(
       isLoadingSong: null == isLoadingSong
           ? _value.isLoadingSong
           : isLoadingSong // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as LoadSong,
+      songs: null == songs
+          ? _value._songs
+          : songs // ignore: cast_nullable_to_non_nullable
+              as List<SongEntity>,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -165,15 +189,31 @@ class __$$HomePageStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomePageStateImpl implements _HomePageState {
-  const _$HomePageStateImpl({this.isLoadingSong = false});
+  const _$HomePageStateImpl(
+      {this.isLoadingSong = LoadSong.initial,
+      final List<SongEntity> songs = const [],
+      this.errorMessage = ''})
+      : _songs = songs;
 
   @override
   @JsonKey()
-  final bool isLoadingSong;
+  final LoadSong isLoadingSong;
+  final List<SongEntity> _songs;
+  @override
+  @JsonKey()
+  List<SongEntity> get songs {
+    if (_songs is EqualUnmodifiableListView) return _songs;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_songs);
+  }
+
+  @override
+  @JsonKey()
+  final String? errorMessage;
 
   @override
   String toString() {
-    return 'HomePageState(isLoadingSong: $isLoadingSong)';
+    return 'HomePageState(isLoadingSong: $isLoadingSong, songs: $songs, errorMessage: $errorMessage)';
   }
 
   @override
@@ -182,11 +222,15 @@ class _$HomePageStateImpl implements _HomePageState {
         (other.runtimeType == runtimeType &&
             other is _$HomePageStateImpl &&
             (identical(other.isLoadingSong, isLoadingSong) ||
-                other.isLoadingSong == isLoadingSong));
+                other.isLoadingSong == isLoadingSong) &&
+            const DeepCollectionEquality().equals(other._songs, _songs) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoadingSong);
+  int get hashCode => Object.hash(runtimeType, isLoadingSong,
+      const DeepCollectionEquality().hash(_songs), errorMessage);
 
   /// Create a copy of HomePageState
   /// with the given fields replaced by the non-null parameter values.
@@ -198,11 +242,17 @@ class _$HomePageStateImpl implements _HomePageState {
 }
 
 abstract class _HomePageState implements HomePageState {
-  const factory _HomePageState({final bool isLoadingSong}) =
-      _$HomePageStateImpl;
+  const factory _HomePageState(
+      {final LoadSong isLoadingSong,
+      final List<SongEntity> songs,
+      final String? errorMessage}) = _$HomePageStateImpl;
 
   @override
-  bool get isLoadingSong;
+  LoadSong get isLoadingSong;
+  @override
+  List<SongEntity> get songs;
+  @override
+  String? get errorMessage;
 
   /// Create a copy of HomePageState
   /// with the given fields replaced by the non-null parameter values.

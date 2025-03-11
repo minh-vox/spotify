@@ -21,15 +21,13 @@ UserData _$UserDataFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserData {
   @JsonKey(name: 'id')
-  String? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'token')
-  String? get token => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'name')
   String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'email')
   String? get email => throw _privateConstructorUsedError;
-  @JsonKey(name: 'authentication_number')
-  String? get authenticationNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: 'avatar_url')
+  String? get avatarUrl => throw _privateConstructorUsedError;
 
   /// Serializes this UserData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -47,11 +45,10 @@ abstract class $UserDataCopyWith<$Res> {
       _$UserDataCopyWithImpl<$Res, UserData>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') String? id,
-      @JsonKey(name: 'token') String? token,
+      {@JsonKey(name: 'id') String id,
       @JsonKey(name: 'name') String? name,
       @JsonKey(name: 'email') String? email,
-      @JsonKey(name: 'authentication_number') String? authenticationNumber});
+      @JsonKey(name: 'avatar_url') String? avatarUrl});
 }
 
 /// @nodoc
@@ -69,21 +66,16 @@ class _$UserDataCopyWithImpl<$Res, $Val extends UserData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? token = freezed,
+    Object? id = null,
     Object? name = freezed,
     Object? email = freezed,
-    Object? authenticationNumber = freezed,
+    Object? avatarUrl = freezed,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      token: freezed == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -92,9 +84,9 @@ class _$UserDataCopyWithImpl<$Res, $Val extends UserData>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      authenticationNumber: freezed == authenticationNumber
-          ? _value.authenticationNumber
-          : authenticationNumber // ignore: cast_nullable_to_non_nullable
+      avatarUrl: freezed == avatarUrl
+          ? _value.avatarUrl
+          : avatarUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -109,11 +101,10 @@ abstract class _$$UserDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') String? id,
-      @JsonKey(name: 'token') String? token,
+      {@JsonKey(name: 'id') String id,
       @JsonKey(name: 'name') String? name,
       @JsonKey(name: 'email') String? email,
-      @JsonKey(name: 'authentication_number') String? authenticationNumber});
+      @JsonKey(name: 'avatar_url') String? avatarUrl});
 }
 
 /// @nodoc
@@ -129,21 +120,16 @@ class __$$UserDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? token = freezed,
+    Object? id = null,
     Object? name = freezed,
     Object? email = freezed,
-    Object? authenticationNumber = freezed,
+    Object? avatarUrl = freezed,
   }) {
     return _then(_$UserDataImpl(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      token: freezed == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -152,9 +138,9 @@ class __$$UserDataImplCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      authenticationNumber: freezed == authenticationNumber
-          ? _value.authenticationNumber
-          : authenticationNumber // ignore: cast_nullable_to_non_nullable
+      avatarUrl: freezed == avatarUrl
+          ? _value.avatarUrl
+          : avatarUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -164,21 +150,17 @@ class __$$UserDataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserDataImpl implements _UserData {
   _$UserDataImpl(
-      {@JsonKey(name: 'id') this.id,
-      @JsonKey(name: 'token') this.token,
+      {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'name') this.name,
       @JsonKey(name: 'email') this.email,
-      @JsonKey(name: 'authentication_number') this.authenticationNumber});
+      @JsonKey(name: 'avatar_url') this.avatarUrl});
 
   factory _$UserDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserDataImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
-  final String? id;
-  @override
-  @JsonKey(name: 'token')
-  final String? token;
+  final String id;
   @override
   @JsonKey(name: 'name')
   final String? name;
@@ -186,12 +168,12 @@ class _$UserDataImpl implements _UserData {
   @JsonKey(name: 'email')
   final String? email;
   @override
-  @JsonKey(name: 'authentication_number')
-  final String? authenticationNumber;
+  @JsonKey(name: 'avatar_url')
+  final String? avatarUrl;
 
   @override
   String toString() {
-    return 'UserData(id: $id, token: $token, name: $name, email: $email, authenticationNumber: $authenticationNumber)';
+    return 'UserData(id: $id, name: $name, email: $email, avatarUrl: $avatarUrl)';
   }
 
   @override
@@ -200,17 +182,15 @@ class _$UserDataImpl implements _UserData {
         (other.runtimeType == runtimeType &&
             other is _$UserDataImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.token, token) || other.token == token) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.authenticationNumber, authenticationNumber) ||
-                other.authenticationNumber == authenticationNumber));
+            (identical(other.avatarUrl, avatarUrl) ||
+                other.avatarUrl == avatarUrl));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, token, name, email, authenticationNumber);
+  int get hashCode => Object.hash(runtimeType, id, name, email, avatarUrl);
 
   /// Create a copy of UserData
   /// with the given fields replaced by the non-null parameter values.
@@ -230,22 +210,17 @@ class _$UserDataImpl implements _UserData {
 
 abstract class _UserData implements UserData {
   factory _UserData(
-      {@JsonKey(name: 'id') final String? id,
-      @JsonKey(name: 'token') final String? token,
+      {@JsonKey(name: 'id') required final String id,
       @JsonKey(name: 'name') final String? name,
       @JsonKey(name: 'email') final String? email,
-      @JsonKey(name: 'authentication_number')
-      final String? authenticationNumber}) = _$UserDataImpl;
+      @JsonKey(name: 'avatar_url') final String? avatarUrl}) = _$UserDataImpl;
 
   factory _UserData.fromJson(Map<String, dynamic> json) =
       _$UserDataImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
-  String? get id;
-  @override
-  @JsonKey(name: 'token')
-  String? get token;
+  String get id;
   @override
   @JsonKey(name: 'name')
   String? get name;
@@ -253,8 +228,8 @@ abstract class _UserData implements UserData {
   @JsonKey(name: 'email')
   String? get email;
   @override
-  @JsonKey(name: 'authentication_number')
-  String? get authenticationNumber;
+  @JsonKey(name: 'avatar_url')
+  String? get avatarUrl;
 
   /// Create a copy of UserData
   /// with the given fields replaced by the non-null parameter values.

@@ -30,9 +30,6 @@ class $AssetsIconsGen {
   /// File path: assets/icons/heart_icon.svg
   SvgGenImage get heartIcon => const SvgGenImage('assets/icons/heart_icon.svg');
 
-  /// File path: assets/icons/hide_pass_icon.svg
-  SvgGenImage get hidePassIcon => const SvgGenImage('assets/icons/hide_pass_icon.svg');
-
   /// File path: assets/icons/home_icon.svg
   SvgGenImage get homeIcon => const SvgGenImage('assets/icons/home_icon.svg');
 
@@ -67,7 +64,6 @@ class $AssetsIconsGen {
         facebookIcon,
         googleIcon,
         heartIcon,
-        hidePassIcon,
         homeIcon,
         homeTopCardIcon,
         iconApp,

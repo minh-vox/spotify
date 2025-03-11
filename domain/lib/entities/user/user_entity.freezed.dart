@@ -17,9 +17,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UserEntity {
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String get avatarUrl => throw _privateConstructorUsedError;
 
   /// Create a copy of UserEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -35,7 +36,7 @@ abstract class $UserEntityCopyWith<$Res> {
     $Res Function(UserEntity) then,
   ) = _$UserEntityCopyWithImpl<$Res, UserEntity>;
   @useResult
-  $Res call({int id, String name, String email});
+  $Res call({String id, String name, String email, String avatarUrl});
 }
 
 /// @nodoc
@@ -52,14 +53,19 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? name = null, Object? email = null}) {
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? email = null,
+    Object? avatarUrl = null,
+  }) {
     return _then(
       _value.copyWith(
             id:
                 null == id
                     ? _value.id
                     : id // ignore: cast_nullable_to_non_nullable
-                        as int,
+                        as String,
             name:
                 null == name
                     ? _value.name
@@ -69,6 +75,11 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
                 null == email
                     ? _value.email
                     : email // ignore: cast_nullable_to_non_nullable
+                        as String,
+            avatarUrl:
+                null == avatarUrl
+                    ? _value.avatarUrl
+                    : avatarUrl // ignore: cast_nullable_to_non_nullable
                         as String,
           )
           as $Val,
@@ -85,7 +96,7 @@ abstract class _$$UserEntityImplCopyWith<$Res>
   ) = __$$UserEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String name, String email});
+  $Res call({String id, String name, String email, String avatarUrl});
 }
 
 /// @nodoc
@@ -101,14 +112,19 @@ class __$$UserEntityImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? name = null, Object? email = null}) {
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? email = null,
+    Object? avatarUrl = null,
+  }) {
     return _then(
       _$UserEntityImpl(
         id:
             null == id
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
-                    as int,
+                    as String,
         name:
             null == name
                 ? _value.name
@@ -119,6 +135,11 @@ class __$$UserEntityImplCopyWithImpl<$Res>
                 ? _value.email
                 : email // ignore: cast_nullable_to_non_nullable
                     as String,
+        avatarUrl:
+            null == avatarUrl
+                ? _value.avatarUrl
+                : avatarUrl // ignore: cast_nullable_to_non_nullable
+                    as String,
       ),
     );
   }
@@ -127,21 +148,29 @@ class __$$UserEntityImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UserEntityImpl implements _UserEntity {
-  const _$UserEntityImpl({this.id = 0, this.name = '', this.email = ''});
+  const _$UserEntityImpl({
+    this.id = '',
+    this.name = '',
+    this.email = '',
+    this.avatarUrl = '',
+  });
 
   @override
   @JsonKey()
-  final int id;
+  final String id;
   @override
   @JsonKey()
   final String name;
   @override
   @JsonKey()
   final String email;
+  @override
+  @JsonKey()
+  final String avatarUrl;
 
   @override
   String toString() {
-    return 'UserEntity(id: $id, name: $name, email: $email)';
+    return 'UserEntity(id: $id, name: $name, email: $email, avatarUrl: $avatarUrl)';
   }
 
   @override
@@ -151,11 +180,13 @@ class _$UserEntityImpl implements _UserEntity {
             other is _$UserEntityImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.email, email) || other.email == email));
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.avatarUrl, avatarUrl) ||
+                other.avatarUrl == avatarUrl));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, email);
+  int get hashCode => Object.hash(runtimeType, id, name, email, avatarUrl);
 
   /// Create a copy of UserEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -168,17 +199,20 @@ class _$UserEntityImpl implements _UserEntity {
 
 abstract class _UserEntity implements UserEntity {
   const factory _UserEntity({
-    final int id,
+    final String id,
     final String name,
     final String email,
+    final String avatarUrl,
   }) = _$UserEntityImpl;
 
   @override
-  int get id;
+  String get id;
   @override
   String get name;
   @override
   String get email;
+  @override
+  String get avatarUrl;
 
   /// Create a copy of UserEntity
   /// with the given fields replaced by the non-null parameter values.

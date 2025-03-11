@@ -29,10 +29,8 @@ class BasicTextField extends StatelessWidget {
                 onTap: onTap,
                 child: Padding(
                   padding: const EdgeInsets.only(right: 20),
-                  child: SvgPicture.asset(
-                    obscureText
-                        ? Assets.icons.hidePassIcon.path
-                        : Assets.icons.googleIcon.path,
+                  child: Icon(
+                    obscureText ? Icons.visibility : Icons.visibility_off,
                   ),
                 ),
               )

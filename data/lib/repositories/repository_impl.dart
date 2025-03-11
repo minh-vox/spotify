@@ -5,9 +5,10 @@ import '../data.dart';
 
 @LazySingleton(as: Repository)
 class RepositoryImpl implements Repository {
-  RepositoryImpl(this._supabaseService);
+  RepositoryImpl(this._supabaseService, this._songDataMapper);
 
   final AppSupabaseServices _supabaseService;
+  final SongDataMapper _songDataMapper;
 
   @override
   Future<void> signIn({required String email, required String password}) async {
@@ -25,5 +26,13 @@ class RepositoryImpl implements Repository {
       password: password,
       name: name,
     );
+  }
+
+  @override
+  Future<List<SongEntity>> getNewsSongs() async {
+    final a = _songDataMapper.mapToListEntity(
+      await _supabaseService.getNewsSongs(),
+    );
+    return a;
   }
 }
