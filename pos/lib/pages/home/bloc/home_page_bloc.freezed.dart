@@ -82,9 +82,78 @@ abstract class _LoadNewsSongs implements LoadNewsSongs {
 }
 
 /// @nodoc
+mixin _$LoadPlayList {}
+
+/// @nodoc
+abstract class $LoadPlayListCopyWith<$Res> {
+  factory $LoadPlayListCopyWith(
+          LoadPlayList value, $Res Function(LoadPlayList) then) =
+      _$LoadPlayListCopyWithImpl<$Res, LoadPlayList>;
+}
+
+/// @nodoc
+class _$LoadPlayListCopyWithImpl<$Res, $Val extends LoadPlayList>
+    implements $LoadPlayListCopyWith<$Res> {
+  _$LoadPlayListCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LoadPlayList
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$LoadPlayListImplCopyWith<$Res> {
+  factory _$$LoadPlayListImplCopyWith(
+          _$LoadPlayListImpl value, $Res Function(_$LoadPlayListImpl) then) =
+      __$$LoadPlayListImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadPlayListImplCopyWithImpl<$Res>
+    extends _$LoadPlayListCopyWithImpl<$Res, _$LoadPlayListImpl>
+    implements _$$LoadPlayListImplCopyWith<$Res> {
+  __$$LoadPlayListImplCopyWithImpl(
+      _$LoadPlayListImpl _value, $Res Function(_$LoadPlayListImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LoadPlayList
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadPlayListImpl implements _LoadPlayList {
+  const _$LoadPlayListImpl();
+
+  @override
+  String toString() {
+    return 'LoadPlayList()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadPlayListImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+}
+
+abstract class _LoadPlayList implements LoadPlayList {
+  const factory _LoadPlayList() = _$LoadPlayListImpl;
+}
+
+/// @nodoc
 mixin _$HomePageState {
   LoadSong get isLoadingSong => throw _privateConstructorUsedError;
+  LoadSong get isLoadingPlayList => throw _privateConstructorUsedError;
   List<SongEntity> get songs => throw _privateConstructorUsedError;
+  List<SongEntity> get playlist => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
   /// Create a copy of HomePageState
@@ -101,7 +170,11 @@ abstract class $HomePageStateCopyWith<$Res> {
       _$HomePageStateCopyWithImpl<$Res, HomePageState>;
   @useResult
   $Res call(
-      {LoadSong isLoadingSong, List<SongEntity> songs, String? errorMessage});
+      {LoadSong isLoadingSong,
+      LoadSong isLoadingPlayList,
+      List<SongEntity> songs,
+      List<SongEntity> playlist,
+      String? errorMessage});
 }
 
 /// @nodoc
@@ -120,7 +193,9 @@ class _$HomePageStateCopyWithImpl<$Res, $Val extends HomePageState>
   @override
   $Res call({
     Object? isLoadingSong = null,
+    Object? isLoadingPlayList = null,
     Object? songs = null,
+    Object? playlist = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -128,9 +203,17 @@ class _$HomePageStateCopyWithImpl<$Res, $Val extends HomePageState>
           ? _value.isLoadingSong
           : isLoadingSong // ignore: cast_nullable_to_non_nullable
               as LoadSong,
+      isLoadingPlayList: null == isLoadingPlayList
+          ? _value.isLoadingPlayList
+          : isLoadingPlayList // ignore: cast_nullable_to_non_nullable
+              as LoadSong,
       songs: null == songs
           ? _value.songs
           : songs // ignore: cast_nullable_to_non_nullable
+              as List<SongEntity>,
+      playlist: null == playlist
+          ? _value.playlist
+          : playlist // ignore: cast_nullable_to_non_nullable
               as List<SongEntity>,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
@@ -149,7 +232,11 @@ abstract class _$$HomePageStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {LoadSong isLoadingSong, List<SongEntity> songs, String? errorMessage});
+      {LoadSong isLoadingSong,
+      LoadSong isLoadingPlayList,
+      List<SongEntity> songs,
+      List<SongEntity> playlist,
+      String? errorMessage});
 }
 
 /// @nodoc
@@ -166,7 +253,9 @@ class __$$HomePageStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoadingSong = null,
+    Object? isLoadingPlayList = null,
     Object? songs = null,
+    Object? playlist = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_$HomePageStateImpl(
@@ -174,9 +263,17 @@ class __$$HomePageStateImplCopyWithImpl<$Res>
           ? _value.isLoadingSong
           : isLoadingSong // ignore: cast_nullable_to_non_nullable
               as LoadSong,
+      isLoadingPlayList: null == isLoadingPlayList
+          ? _value.isLoadingPlayList
+          : isLoadingPlayList // ignore: cast_nullable_to_non_nullable
+              as LoadSong,
       songs: null == songs
           ? _value._songs
           : songs // ignore: cast_nullable_to_non_nullable
+              as List<SongEntity>,
+      playlist: null == playlist
+          ? _value._playlist
+          : playlist // ignore: cast_nullable_to_non_nullable
               as List<SongEntity>,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
@@ -191,13 +288,19 @@ class __$$HomePageStateImplCopyWithImpl<$Res>
 class _$HomePageStateImpl implements _HomePageState {
   const _$HomePageStateImpl(
       {this.isLoadingSong = LoadSong.initial,
+      this.isLoadingPlayList = LoadSong.initial,
       final List<SongEntity> songs = const [],
+      final List<SongEntity> playlist = const [],
       this.errorMessage = ''})
-      : _songs = songs;
+      : _songs = songs,
+        _playlist = playlist;
 
   @override
   @JsonKey()
   final LoadSong isLoadingSong;
+  @override
+  @JsonKey()
+  final LoadSong isLoadingPlayList;
   final List<SongEntity> _songs;
   @override
   @JsonKey()
@@ -207,13 +310,22 @@ class _$HomePageStateImpl implements _HomePageState {
     return EqualUnmodifiableListView(_songs);
   }
 
+  final List<SongEntity> _playlist;
+  @override
+  @JsonKey()
+  List<SongEntity> get playlist {
+    if (_playlist is EqualUnmodifiableListView) return _playlist;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_playlist);
+  }
+
   @override
   @JsonKey()
   final String? errorMessage;
 
   @override
   String toString() {
-    return 'HomePageState(isLoadingSong: $isLoadingSong, songs: $songs, errorMessage: $errorMessage)';
+    return 'HomePageState(isLoadingSong: $isLoadingSong, isLoadingPlayList: $isLoadingPlayList, songs: $songs, playlist: $playlist, errorMessage: $errorMessage)';
   }
 
   @override
@@ -223,14 +335,22 @@ class _$HomePageStateImpl implements _HomePageState {
             other is _$HomePageStateImpl &&
             (identical(other.isLoadingSong, isLoadingSong) ||
                 other.isLoadingSong == isLoadingSong) &&
+            (identical(other.isLoadingPlayList, isLoadingPlayList) ||
+                other.isLoadingPlayList == isLoadingPlayList) &&
             const DeepCollectionEquality().equals(other._songs, _songs) &&
+            const DeepCollectionEquality().equals(other._playlist, _playlist) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoadingSong,
-      const DeepCollectionEquality().hash(_songs), errorMessage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      isLoadingSong,
+      isLoadingPlayList,
+      const DeepCollectionEquality().hash(_songs),
+      const DeepCollectionEquality().hash(_playlist),
+      errorMessage);
 
   /// Create a copy of HomePageState
   /// with the given fields replaced by the non-null parameter values.
@@ -244,13 +364,19 @@ class _$HomePageStateImpl implements _HomePageState {
 abstract class _HomePageState implements HomePageState {
   const factory _HomePageState(
       {final LoadSong isLoadingSong,
+      final LoadSong isLoadingPlayList,
       final List<SongEntity> songs,
+      final List<SongEntity> playlist,
       final String? errorMessage}) = _$HomePageStateImpl;
 
   @override
   LoadSong get isLoadingSong;
   @override
+  LoadSong get isLoadingPlayList;
+  @override
   List<SongEntity> get songs;
+  @override
+  List<SongEntity> get playlist;
   @override
   String? get errorMessage;
 

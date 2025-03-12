@@ -30,9 +30,15 @@ class RepositoryImpl implements Repository {
 
   @override
   Future<List<SongEntity>> getNewsSongs() async {
-    final a = _songDataMapper.mapToListEntity(
+    return _songDataMapper.mapToListEntity(
       await _supabaseService.getNewsSongs(),
     );
-    return a;
+  }
+
+  @override
+  Future<List<SongEntity>> getPlayList() async {
+    return _songDataMapper.mapToListEntity(
+      await _supabaseService.getPlayList(),
+    );
   }
 }

@@ -26,8 +26,10 @@ extension GetItInjectableX on _i174.GetIt {
       environment,
       environmentFilter,
     );
-    gh.factory<_i767.HomePageBloc>(
-        () => _i767.HomePageBloc(gh<_i494.GetNewsSongsUseCase>()));
+    gh.factory<_i767.HomePageBloc>(() => _i767.HomePageBloc(
+          gh<_i494.GetNewsSongsUseCase>(),
+          gh<_i494.GetPlaylistUseCase>(),
+        ));
     gh.factory<_i391.LoginPageBloc>(
         () => _i391.LoginPageBloc(gh<_i494.SignInUseCase>()));
     gh.factory<_i127.RegisterPageBloc>(

@@ -8,4 +8,5 @@ abstract class Repository {
     required String name,
   });
   Future<List<SongEntity>> getNewsSongs();
+  Future<List<SongEntity>> getPlayList();
 }

@@ -9,3 +9,4 @@ export 'usecases/base/base_use_case.dart';
 export 'usecases/register_usecase/register_use_case.dart';
 export 'usecases/signin_usecase/sign_in_use_case.dart';
 export 'usecases/song_use_case/get_news_songs_use_case.dart';
+export 'usecases/song_use_case/get_playlist_use_case.dart';

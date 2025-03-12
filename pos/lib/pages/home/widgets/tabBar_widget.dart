@@ -11,44 +11,52 @@ class TabBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment.center,
+      alignment: Alignment.centerLeft,
       child: TabBar(
         labelColor: Colors.black,
         unselectedLabelColor: Colors.black54,
         dividerHeight: 0,
         controller: tabController,
         isScrollable: true,
-        padding: const EdgeInsets.symmetric(
-          vertical: 20,
+        padding: const EdgeInsets.only(
+          bottom: 20,
         ),
         tabAlignment: TabAlignment.start,
         tabs: const [
-          Text(
-            'News',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
+          Tab(
+            child: Text(
+              'News',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-          Text(
-            'Video',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
+          Tab(
+            child: Text(
+              'Video',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-          Text(
-            'Artists',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
+          Tab(
+            child: Text(
+              'Artists',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-          Text(
-            'Podcast',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
+          Tab(
+            child: Text(
+              'Podcast',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],

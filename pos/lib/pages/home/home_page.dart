@@ -25,15 +25,33 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          GetIt.instance<HomePageBloc>()..add(const LoadNewsSongs()),
+      create: (context) => GetIt.instance<HomePageBloc>()
+        ..add(const LoadNewsSongs())
+        ..add(const LoadPlayList()),
       child: Scaffold(
         appBar: BasicAppBar(
           title: SvgPicture.asset(
             Assets.icons.spotifyIcon.path,
             height: 40,
           ),
-          hideBack: true,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.03),
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                Icons.search_rounded,
+                size: 30,
+                color: Colors.black,
+              ),
+            ),
+          ),
           action: IconButton(
             onPressed: () {},
             icon: const Icon(
@@ -75,25 +93,18 @@ class _HomePageState extends State<HomePage>
                 },
               ),
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
-              const SongWidget(),
-              const SizedBox(
-                height: 10,
-              ),
-              const SongWidget(),
-              const SizedBox(
-                height: 10,
-              ),
-              const SongWidget(),
-              const SizedBox(
-                height: 10,
-              ),
-              const SongWidget(),
-              const SizedBox(
-                height: 10,
-              ),
-              const SongWidget(),
+              BlocBuilder<HomePageBloc, HomePageState>(
+                builder: (context, state) {
+                  if (state.isLoadingPlayList == LoadSong.loaded) {
+                    return PlaylistWidget(
+                      playList: state.playlist,
+                    );
+                  }
+                  return Container();
+                },
+              )
             ],
           ),
         ),

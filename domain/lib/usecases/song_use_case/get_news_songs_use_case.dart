@@ -14,7 +14,7 @@ class GetNewsSongsUseCase extends BaseUseCase<SongInput, SongOutput> {
   @protected
   @override
   Future<SongOutput> buildUseCase(SongInput input) async {
-    final songs = await _repository.getNewsSongs(); // Lấy dữ liệu từ repository
+    final songs = await _repository.getNewsSongs();
     return SongOutput(songs: songs);
   }
 }

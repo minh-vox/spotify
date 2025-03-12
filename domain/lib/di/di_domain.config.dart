@@ -15,6 +15,8 @@ import 'package:domain/usecases/register_usecase/register_use_case.dart'
 import 'package:domain/usecases/signin_usecase/sign_in_use_case.dart' as _i862;
 import 'package:domain/usecases/song_use_case/get_news_songs_use_case.dart'
     as _i74;
+import 'package:domain/usecases/song_use_case/get_playlist_use_case.dart'
+    as _i951;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -33,6 +35,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i74.GetNewsSongsUseCase>(
       () => _i74.GetNewsSongsUseCase(gh<_i494.Repository>()),
+    );
+    gh.factory<_i951.GetPlaylistUseCase>(
+      () => _i951.GetPlaylistUseCase(gh<_i494.Repository>()),
     );
     return this;
   }

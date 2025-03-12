@@ -68,4 +68,16 @@ class AppSupabaseServices {
       throw Exception("Error getting recent songs: ${e.toString()}");
     }
   }
+
+  Future<List<SongData>> getPlayList() async {
+    try {
+      final response = await _supabase
+          .from('Songs')
+          .select()
+          .order('release_date', ascending: false);
+      return response.map((json) => SongData.fromJson(json)).toList();
+    } catch (e) {
+      throw Exception("Error getting recent songs: ${e.toString()}");
+    }
+  }
 }
