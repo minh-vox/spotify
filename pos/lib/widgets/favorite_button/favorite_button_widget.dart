@@ -12,9 +12,10 @@ class _FavoriteButtonWidgetState extends State<FavoriteButtonWidget> {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {},
+      highlightColor: Colors.transparent,
       icon: const Icon(
         Icons.favorite_outline_outlined,
-        size: 25,
+        size: 30,
       ),
     );
   }

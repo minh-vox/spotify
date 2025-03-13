@@ -1,0 +1,75 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:pos/pos.dart';
+
+part 'song_play_event.dart';
+part 'song_play_state.dart';
+part 'song_play_bloc.freezed.dart';
+
+class SongPlayBloc extends Bloc<SongPlayEvent, SongPlayState> {
+  final AudioPlayer _audioPlayer = AudioPlayer();
+
+  SongPlayBloc() : super(const SongPlayState()) {
+    _audioPlayer.positionStream.listen((position) {
+      add(SongPlayerProgress(position: position));
+    });
+
+    _audioPlayer.durationStream.listen((duration) {
+      if (duration != null) {
+        add(SongPlayerDurationChanged(duration: duration));
+      }
+    });
+
+    on<SongPlayerProgress>((event, emit) {
+      emit(state.copyWith(songPosition: event.position));
+    });
+
+    on<SongPlayerDurationChanged>((event, emit) {
+      emit(state.copyWith(songDuration: event.duration));
+    });
+
+    on<SongPlayerPlayPause>((event, emit) {
+      if (_audioPlayer.playing) {
+        _audioPlayer.pause();
+        emit(
+          state.copyWith(
+            isPlaying: false,
+          ),
+        );
+      } else {
+        _audioPlayer.play();
+        emit(
+          state.copyWith(
+            isPlaying: true,
+          ),
+        );
+      }
+    });
+
+    on<SongPlayerLoadSong>((event, emit) async {
+      emit(state.copyWith(isSongPlay: LoadSong.loading));
+
+      try {
+        await _audioPlayer.setUrl(event.songUrl);
+        emit(
+          state.copyWith(
+            songUrl: event.songUrl,
+            isPlaying: false,
+            isSongPlay: LoadSong.loaded,
+          ),
+        );
+      } catch (e) {
+        emit(
+          state.copyWith(isSongPlay: LoadSong.failure),
+        );
+      }
+    });
+  }
+
+  @override
+  Future<void> close() {
+    _audioPlayer.dispose();
+    return super.close();
+  }
+}

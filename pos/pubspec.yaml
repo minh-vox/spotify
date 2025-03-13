@@ -21,6 +21,7 @@ dependencies:
   # UI
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.0.0+1
+  just_audio:
 
   # State management
   flutter_bloc: ^9.1.0

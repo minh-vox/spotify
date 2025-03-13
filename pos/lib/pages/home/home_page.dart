@@ -35,6 +35,7 @@ class _HomePageState extends State<HomePage>
             height: 40,
           ),
           leading: IconButton(
+            highlightColor: Colors.transparent,
             onPressed: () {
               Navigator.pop(context);
             },
@@ -54,6 +55,7 @@ class _HomePageState extends State<HomePage>
           ),
           action: IconButton(
             onPressed: () {},
+            highlightColor: Colors.transparent,
             icon: const Icon(
               Icons.more_vert,
               size: 30,
@@ -61,52 +63,30 @@ class _HomePageState extends State<HomePage>
           ),
         ),
         bottomNavigationBar: const BasicBottomBar(),
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const NewAlbumWidget(),
-              const SizedBox(
-                height: 20,
+        body: BlocBuilder<HomePageBloc, HomePageState>(
+          builder: (context, state) {
+            if (state.isLoadingSong == LoadSong.loading ||
+                state.isLoadingPlayList == LoadSong.loading) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+
+            return SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const NewAlbumWidget(),
+                  const SizedBox(height: 20),
+                  TabBarWidget(tabController: _tabController),
+                  NewsSongsWidget(songs: state.songs),
+                  const SizedBox(height: 20),
+                  PlaylistWidget(playList: state.playlist),
+                ],
               ),
-              TabBarWidget(
-                tabController: _tabController,
-              ),
-              BlocBuilder<HomePageBloc, HomePageState>(
-                builder: (context, state) {
-                  if (state.isLoadingSong == LoadSong.loading) {
-                    return const Center(
-                        child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 50,
-                      ),
-                      child: CircularProgressIndicator(),
-                    ));
-                  }
-                  if (state.isLoadingSong == LoadSong.loaded) {
-                    return NewsSongsWidget(
-                      songs: state.songs,
-                    );
-                  }
-                  return Container();
-                },
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              BlocBuilder<HomePageBloc, HomePageState>(
-                builder: (context, state) {
-                  if (state.isLoadingPlayList == LoadSong.loaded) {
-                    return PlaylistWidget(
-                      playList: state.playlist,
-                    );
-                  }
-                  return Container();
-                },
-              )
-            ],
-          ),
+            );
+          },
         ),
       ),
     );
