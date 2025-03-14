@@ -172,5 +172,5 @@ make sync
 <center>
     <h5>Spotify app made with</h5>
     <img src="/images/flutter.png" width="300px">
-    <h5>Theo Vo</h5>
+    <h5>Minh Vo</h5>
 </center>
