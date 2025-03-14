@@ -9,7 +9,7 @@ class AppSupabaseServices {
 
   AppSupabaseServices(this._supabase);
 
-  Future<AuthenticationData?> signIn({
+  Future<AuthenticationData?> LogIn({
     required String email,
     required String password,
   }) async {

@@ -11,8 +11,8 @@ class RepositoryImpl implements Repository {
   final SongDataMapper _songDataMapper;
 
   @override
-  Future<void> signIn({required String email, required String password}) async {
-    await _supabaseService.signIn(email: email, password: password);
+  Future<void> LogIn({required String email, required String password}) async {
+    await _supabaseService.LogIn(email: email, password: password);
   }
 
   @override

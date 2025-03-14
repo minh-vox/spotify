@@ -24,6 +24,31 @@ class _LoginPageState extends BasePageState<LoginPage, LoginPageBloc> {
           Assets.icons.spotifyIcon.path,
           height: 40,
         ),
+        leading: IconButton(
+          highlightColor: Colors.transparent,
+          onPressed: () {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const IntroPage(),
+              ),
+              (route) => false,
+            );
+          },
+          icon: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.03),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(
+              Icons.arrow_back_ios_new,
+              size: 20,
+              color: Colors.black,
+            ),
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(

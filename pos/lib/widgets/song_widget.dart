@@ -84,7 +84,9 @@ class SongWidget extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            const FavoriteButtonWidget()
+            const FavoriteButtonWidget(
+              isClicked: false,
+            )
           ],
         ),
       ),

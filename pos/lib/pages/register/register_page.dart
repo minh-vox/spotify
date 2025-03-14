@@ -25,6 +25,31 @@ class _RegisterPageState extends BasePageState<RegisterPage, RegisterPageBloc> {
           Assets.icons.spotifyIcon.path,
           height: 40,
         ),
+        leading: IconButton(
+          highlightColor: Colors.transparent,
+          onPressed: () {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const IntroPage(),
+              ),
+              (route) => false,
+            );
+          },
+          icon: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.03),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(
+              Icons.arrow_back_ios_new,
+              size: 20,
+              color: Colors.black,
+            ),
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -36,7 +61,7 @@ class _RegisterPageState extends BasePageState<RegisterPage, RegisterPageBloc> {
             mainAxisSize: MainAxisSize.min,
             children: [
               TopSignupSigninWidget(
-                title: 'Register',
+                title: 'Sign Up',
                 body: Column(
                   children: [
                     BasicTextField(
@@ -119,7 +144,7 @@ class _RegisterPageState extends BasePageState<RegisterPage, RegisterPageBloc> {
                 height: 30,
               ),
               const BottomSignupSigninWidget(
-                title: 'Sign In',
+                title: 'Sign Up',
               ),
             ],
           ),

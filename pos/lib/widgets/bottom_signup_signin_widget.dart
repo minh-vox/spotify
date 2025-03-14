@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../pos.dart';
 
-
 class BottomSignupSigninWidget extends StatelessWidget {
   const BottomSignupSigninWidget({
     super.key,
@@ -64,28 +63,50 @@ class BottomSignupSigninWidget extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 30),
-        if (title == 'Register')
-          const Row(
+        if (title == 'Sign Up')
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Do You Have An Account? '),
-              Text(
-                'Sign In',
-                style: TextStyle(
-                  color: Color(0xFF288CE9),
+              const Text('Do You Have An Account? '),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPage(),
+                    ),
+                    (route) => false,
+                  );
+                },
+                child: const Text(
+                  'Sign In',
+                  style: TextStyle(
+                    color: Color(0xFF288CE9),
+                  ),
                 ),
               ),
             ],
           )
         else
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Not A Member? '),
-              Text(
-                'Register Now',
-                style: TextStyle(
-                  color: Color(0xFF288CE9),
+              const Text('Not A Member? '),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const RegisterPage(),
+                    ),
+                    (route) => false,
+                  );
+                },
+                child: const Text(
+                  'Register Now',
+                  style: TextStyle(
+                    color: Color(0xFF288CE9),
+                  ),
                 ),
               ),
             ],

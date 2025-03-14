@@ -9,106 +9,115 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Align(
-            alignment: Alignment.topCenter,
-            child: Image.asset(
-              Assets.images.headphone.path,
-            ),
-          ),
-          Align(
-            alignment: Alignment.topRight,
-            child: SvgPicture.asset(
-              Assets.icons.topPattern.path,
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: SvgPicture.asset(
-              Assets.icons.bottomPattern.path,
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Image.asset(
-              Assets.images.melody.path,
-            ),
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 40,
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 40,
+            vertical: 150,
+          ).copyWith(bottom: 50),
+          child: Column(
+            children: [
+              Image.asset(
+                Assets.icons.spotifyLogo.path,
+                height: 60,
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Enjoy Listening To Music',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 21,
-                  ),
-                  const Text(
-                    'Spotify is a proprietary Swedish audio streaming and media services provider ',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 18,
-                      color: AppColors.grey,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Flexible(
-                        child: BasicAppButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const RegisterPage()),
-                            );
-                          },
-                          title: 'Register',
-                        ),
-                      ),
-                      Flexible(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const LoginPage(),
-                              ),
-                            );
-                          },
-                          child: const Text(
-                            'Sign In',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+              const Spacer(),
+              const Text(
+                'Millions of songs.\nFree on Spotify.',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black, // Chữ đen
+                ),
+                textAlign: TextAlign.center,
               ),
-            ),
-          )
-        ],
+              const SizedBox(height: 40),
+              BasicAppButton(
+                borderColor: Colors.black,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const RegisterPage()),
+                  );
+                },
+                title: 'Sign up free',
+              ),
+              const SizedBox(height: 20),
+              BasicAppButton(
+                icon: SvgPicture.asset(
+                  Assets.icons.facebookIcon.path,
+                  height: 30,
+                ),
+                title: 'Continue with Facebook',
+                backgroundColor: Colors.white,
+                textColor: Colors.black,
+                borderColor: Colors.black,
+                onPressed: () {},
+              ),
+              const SizedBox(height: 10),
+              BasicAppButton(
+                icon: SvgPicture.asset(
+                  Assets.icons.googleIcon.path,
+                  height: 25,
+                ),
+                title: 'Continue with Google',
+                onPressed: () {},
+                backgroundColor: Colors.white,
+                textColor: Colors.black,
+                borderColor: Colors.black,
+              ),
+              const SizedBox(height: 10),
+              BasicAppButton(
+                icon: Container(),
+                title: 'Log in',
+                backgroundColor: Colors.white,
+                textColor: Colors.black,
+                borderColor: Colors.black,
+                onPressed: () {
+                  // Navigator.pushNamed(context, '/login');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
+
+  // // Widget tạo nút mạng xã hội
+  // Widget _buildSocialButton({
+  //   required Widget icon,
+  //   required String text,
+  //   required VoidCallback onTap,
+  // }) {
+  //   return GestureDetector(
+  //     onTap: onTap,
+  //     child: Container(
+  //       width: double.infinity,
+  //       padding: const EdgeInsets.symmetric(vertical: 14),
+  //       decoration: BoxDecoration(
+  //         border: Border.all(color: Colors.black), // Viền đen thay vì trắng
+  //         borderRadius: BorderRadius.circular(30),
+  //       ),
+  //       child: Row(
+  //         mainAxisAlignment: MainAxisAlignment.center,
+  //         children: [
+  //           icon,
+  //           const SizedBox(width: 10),
+  //           Text(
+  //             text,
+  //             style:
+  //                 const TextStyle(fontSize: 16, color: Colors.black), // Chữ đen
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
 }

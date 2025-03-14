@@ -22,14 +22,13 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
     LoadNewsSongs event,
     Emitter<HomePageState> emit,
   ) async {
+    emit(
+      state.copyWith(
+        isLoadingSong: LoadSong.loading,
+        errorMessage: null,
+      ),
+    );
     try {
-      emit(
-        state.copyWith(
-          isLoadingSong: LoadSong.loading,
-          errorMessage: null,
-        ),
-      );
-
       final songs = await _getNewsSongsUseCase.execute(const SongInput());
 
       emit(
@@ -52,14 +51,13 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
     LoadPlayList event,
     Emitter<HomePageState> emit,
   ) async {
+    emit(
+      state.copyWith(
+        isLoadingPlayList: LoadSong.loading,
+        errorMessage: null,
+      ),
+    );
     try {
-      emit(
-        state.copyWith(
-          isLoadingPlayList: LoadSong.loading,
-          errorMessage: null,
-        ),
-      );
-
       final playlist = await _getPlaylistUseCase.execute(const PlayListInput());
 
       emit(

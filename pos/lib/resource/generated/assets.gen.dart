@@ -15,9 +15,6 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/bottom_pattern.svg
-  SvgGenImage get bottomPattern => const SvgGenImage('assets/icons/bottom_pattern.svg');
-
   /// File path: assets/icons/discovery_icon.svg
   SvgGenImage get discoveryIcon => const SvgGenImage('assets/icons/discovery_icon.svg');
 
@@ -32,9 +29,6 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/home_icon.svg
   SvgGenImage get homeIcon => const SvgGenImage('assets/icons/home_icon.svg');
-
-  /// File path: assets/icons/home_top_card_icon.svg
-  SvgGenImage get homeTopCardIcon => const SvgGenImage('assets/icons/home_top_card_icon.svg');
 
   /// File path: assets/icons/icon_app.png
   AssetGenImage get iconApp => const AssetGenImage('assets/icons/icon_app.png');
@@ -51,28 +45,26 @@ class $AssetsIconsGen {
   /// File path: assets/icons/spotify_icon.svg
   SvgGenImage get spotifyIcon => const SvgGenImage('assets/icons/spotify_icon.svg');
 
+  /// File path: assets/icons/spotify_logo.png
+  AssetGenImage get spotifyLogo => const AssetGenImage('assets/icons/spotify_logo.png');
+
   /// File path: assets/icons/sun_icon.svg
   SvgGenImage get sunIcon => const SvgGenImage('assets/icons/sun_icon.svg');
 
-  /// File path: assets/icons/top_pattern.svg
-  SvgGenImage get topPattern => const SvgGenImage('assets/icons/top_pattern.svg');
-
   /// List of all assets
   List<dynamic> get values => [
-        bottomPattern,
         discoveryIcon,
         facebookIcon,
         googleIcon,
         heartIcon,
         homeIcon,
-        homeTopCardIcon,
         iconApp,
         iconSplash,
         moonIcon,
         profileIcon,
         spotifyIcon,
-        sunIcon,
-        topPattern
+        spotifyLogo,
+        sunIcon
       ];
 }
 

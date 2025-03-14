@@ -6,4 +6,4 @@ import 'di_data.config.dart';
 final GetIt getIt = GetIt.instance;
 
 @injectableInit
-Future<void> configureInjection_data() async => getIt.init();
+void configureInjection_data() => getIt.init();

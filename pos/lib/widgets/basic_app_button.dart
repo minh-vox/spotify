@@ -12,6 +12,7 @@ class BasicAppButton extends StatelessWidget {
     this.elevation,
     this.padding,
     this.icon,
+    this.borderColor,
   });
 
   final VoidCallback onPressed;
@@ -23,19 +24,23 @@ class BasicAppButton extends StatelessWidget {
   final double? elevation;
   final EdgeInsetsGeometry? padding;
   final Widget? icon;
+  final Color? borderColor; // Thêm viền cho nút
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        minimumSize: Size.fromHeight(height ?? 60),
+        minimumSize: Size.fromHeight(height ?? 55),
         backgroundColor: backgroundColor ?? Theme.of(context).primaryColor,
         foregroundColor: textColor ?? Colors.white,
+        elevation: elevation ?? 2,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 12.0),
+          borderRadius: BorderRadius.circular(borderRadius ?? 50.0),
+          side: borderColor != null
+              ? BorderSide(color: borderColor!)
+              : BorderSide.none,
         ),
-        elevation: elevation ?? 4.0,
         padding: padding ??
             const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
       ),
@@ -48,7 +53,7 @@ class BasicAppButton extends StatelessWidget {
             title,
             style: TextStyle(
               color: textColor ?? Colors.white,
-              fontSize: 20.0,
+              fontSize: 18.0,
               fontWeight: FontWeight.bold,
             ),
           ),

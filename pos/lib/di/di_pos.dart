@@ -6,4 +6,4 @@ import 'di_pos.config.dart';
 final GetIt getIt = GetIt.instance;
 
 @injectableInit
-Future<void> configureInjection_pos() async => getIt.init();
+void configureInjection_pos() => getIt.init();

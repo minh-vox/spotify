@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:pos/pos.dart';
 
@@ -7,6 +8,7 @@ part 'song_play_event.dart';
 part 'song_play_state.dart';
 part 'song_play_bloc.freezed.dart';
 
+@injectable
 class SongPlayBloc extends Bloc<SongPlayEvent, SongPlayState> {
   final AudioPlayer _audioPlayer = AudioPlayer();
 

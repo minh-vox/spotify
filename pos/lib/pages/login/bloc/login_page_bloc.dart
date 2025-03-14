@@ -22,7 +22,7 @@ class LoginPageBloc extends Bloc<LoginPageEvent, LoginPageState> {
 
         try {
           final user = await _signInUseCase.execute(
-            SignInInput(
+            LogInInput(
               email: event.email.trim(),
               password: event.password.trim(),
             ),
@@ -46,5 +46,5 @@ class LoginPageBloc extends Bloc<LoginPageEvent, LoginPageState> {
     );
   }
 
-  final SignInUseCase _signInUseCase;
+  final LogInUseCase _signInUseCase;
 }
