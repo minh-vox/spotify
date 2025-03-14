@@ -1,6 +1,5 @@
 <center>
-    <h1>Spotify App Music</h1>
-    <img src="/images/icon_app.png" width="300px"/>
+    <h1>Spotify App Music <img src="/images/icon_app.png" width="50px"/></h1>
 </center>
 
 ## Prerequisites:
