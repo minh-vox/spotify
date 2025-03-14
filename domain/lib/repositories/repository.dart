@@ -9,4 +9,5 @@ abstract class Repository {
   });
   Future<List<SongEntity>> getNewsSongs();
   Future<List<SongEntity>> getPlayList();
+  Future<void> rmOrAddFavoriteSong({required String songid});
 }

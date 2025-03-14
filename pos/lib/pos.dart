@@ -27,6 +27,7 @@ export 'widgets/basic_app_button.dart';
 export 'widgets/basic_bottom_bar.dart';
 export 'widgets/basic_text_field.dart';
 export 'widgets/bottom_signup_signin_widget.dart';
+export 'widgets/favorite_button/bloc/favorite_bloc.dart';
 export 'widgets/favorite_button/favorite_button_widget.dart';
 export 'widgets/song_widget.dart';
 export 'widgets/top_signup_signin_widget.dart';

@@ -29,7 +29,6 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     gh.factory<_i229.SongPlayBloc>(() => _i229.SongPlayBloc());
-    gh.factory<_i577.FavoriteBloc>(() => _i577.FavoriteBloc());
     gh.factory<_i391.LoginPageBloc>(
         () => _i391.LoginPageBloc(gh<_i494.LogInUseCase>()));
     gh.factory<_i767.HomePageBloc>(() => _i767.HomePageBloc(
@@ -38,6 +37,8 @@ extension GetItInjectableX on _i174.GetIt {
         ));
     gh.factory<_i127.RegisterPageBloc>(
         () => _i127.RegisterPageBloc(gh<_i494.RegisterUseCase>()));
+    gh.factory<_i577.FavoriteBloc>(
+        () => _i577.FavoriteBloc(gh<_i494.RmOrAddFavoriteSongUseCase>()));
     return this;
   }
 }

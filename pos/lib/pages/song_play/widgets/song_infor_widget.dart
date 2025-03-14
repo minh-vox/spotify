@@ -57,8 +57,8 @@ class SongInforWidget extends StatelessWidget {
                 ],
               ),
             ),
-            const FavoriteButtonWidget(
-              isClicked: false,
+            FavoriteButtonWidget(
+              songid: song.id,
             ),
           ],
         ),

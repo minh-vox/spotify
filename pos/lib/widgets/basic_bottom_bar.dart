@@ -14,25 +14,53 @@ class BasicBottomBar extends StatelessWidget implements PreferredSizeWidget {
         children: [
           Expanded(
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomePage(),
+                  ),
+                );
+              },
               icon: SvgPicture.asset(Assets.icons.homeIcon.path),
             ),
           ),
           Expanded(
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Placeholder(),
+                  ),
+                );
+              },
               icon: SvgPicture.asset(Assets.icons.discoveryIcon.path),
             ),
           ),
           Expanded(
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Placeholder(),
+                  ),
+                );
+              },
               icon: SvgPicture.asset(Assets.icons.heartIcon.path),
             ),
           ),
           Expanded(
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Placeholder(),
+                  ),
+                );
+              },
               icon: SvgPicture.asset(Assets.icons.profileIcon.path),
             ),
           )

@@ -17,6 +17,8 @@ import 'package:domain/usecases/playlist_song_use_case/get_playlist_use_case.dar
     as _i746;
 import 'package:domain/usecases/register_usecase/register_use_case.dart'
     as _i719;
+import 'package:domain/usecases/rm_or_add_favorite_song_usecase/rm_or_add_favorite_song_use_case.dart'
+    as _i637;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -38,6 +40,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i936.LogInUseCase>(
       () => _i936.LogInUseCase(gh<_i494.Repository>()),
+    );
+    gh.factory<_i637.RmOrAddFavoriteSongUseCase>(
+      () => _i637.RmOrAddFavoriteSongUseCase(gh<_i494.Repository>()),
     );
     return this;
   }

@@ -34,6 +34,7 @@ class AppSupabaseServices {
         );
       }
     } catch (e) {
+      print('Supabase Error: $e');
       throw Exception("Login failed: ${e.toString()}");
     }
     return null;
@@ -45,12 +46,24 @@ class AppSupabaseServices {
     required String name,
   }) async {
     try {
-      await _supabase.auth.signUp(
+      final response = await _supabase.auth.signUp(
         email: email,
         password: password,
-        data: {'name': name},
       );
+
+      final userId = response.user?.id; // Lấy UID của user
+
+      if (userId == null) {
+        throw Exception('User ID is null after registration');
+      }
+
+      await _supabase.from('Users').insert({
+        'uid': userId,
+        'email': email,
+        'name': name,
+      });
     } catch (e) {
+      print('Supabase Error: $e');
       throw Exception("Register failed: ${e.toString()}");
     }
     return;
@@ -65,6 +78,7 @@ class AppSupabaseServices {
           .limit(5);
       return response.map((json) => SongData.fromJson(json)).toList();
     } catch (e) {
+      print('Supabase Error: $e');
       throw Exception("Error getting recent songs: ${e.toString()}");
     }
   }
@@ -77,7 +91,41 @@ class AppSupabaseServices {
           .order('release_date', ascending: false);
       return response.map((json) => SongData.fromJson(json)).toList();
     } catch (e) {
+      print('Supabase Error: $e');
       throw Exception("Error getting recent songs: ${e.toString()}");
+    }
+  }
+
+  Future<void> rmOrAddFavoriteSong({required String songId}) async {
+    try {
+      final user = _supabase.auth.currentUser;
+      if (user == null) throw 'User not authenticated';
+
+      String userId = user.id;
+
+      final response =
+          await _supabase
+              .from('Favorites')
+              .select()
+              .eq('uid', userId)
+              .eq('song_id', songId)
+              .maybeSingle();
+
+      if (response != null) {
+        await _supabase
+            .from('Favorites')
+            .delete()
+            .eq('uid', userId)
+            .eq('song_id', songId);
+      } else {
+        await _supabase.from('Favorites').insert({
+          'uid': userId,
+          'song_id': songId,
+        });
+      }
+    } catch (e) {
+      print('Supabase Error: $e');
+      throw Exception('Error: $e');
     }
   }
 }

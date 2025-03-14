@@ -6,5 +6,7 @@ sealed class FavoriteEvent {
 
 @freezed
 class ClickFavorite extends FavoriteEvent with _$ClickFavorite {
-  const factory ClickFavorite() = _ClickFavorite;
+  const factory ClickFavorite({
+    required String songid,
+  }) = _ClickFavorite;
 }

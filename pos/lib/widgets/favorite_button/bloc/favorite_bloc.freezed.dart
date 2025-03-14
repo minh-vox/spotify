@@ -15,13 +15,23 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$ClickFavorite {}
+mixin _$ClickFavorite {
+  String get songid => throw _privateConstructorUsedError;
+
+  /// Create a copy of ClickFavorite
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ClickFavoriteCopyWith<ClickFavorite> get copyWith =>
+      throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 abstract class $ClickFavoriteCopyWith<$Res> {
   factory $ClickFavoriteCopyWith(
           ClickFavorite value, $Res Function(ClickFavorite) then) =
       _$ClickFavoriteCopyWithImpl<$Res, ClickFavorite>;
+  @useResult
+  $Res call({String songid});
 }
 
 /// @nodoc
@@ -36,13 +46,29 @@ class _$ClickFavoriteCopyWithImpl<$Res, $Val extends ClickFavorite>
 
   /// Create a copy of ClickFavorite
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? songid = null,
+  }) {
+    return _then(_value.copyWith(
+      songid: null == songid
+          ? _value.songid
+          : songid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$ClickFavoriteImplCopyWith<$Res> {
+abstract class _$$ClickFavoriteImplCopyWith<$Res>
+    implements $ClickFavoriteCopyWith<$Res> {
   factory _$$ClickFavoriteImplCopyWith(
           _$ClickFavoriteImpl value, $Res Function(_$ClickFavoriteImpl) then) =
       __$$ClickFavoriteImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String songid});
 }
 
 /// @nodoc
@@ -55,40 +81,86 @@ class __$$ClickFavoriteImplCopyWithImpl<$Res>
 
   /// Create a copy of ClickFavorite
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? songid = null,
+  }) {
+    return _then(_$ClickFavoriteImpl(
+      songid: null == songid
+          ? _value.songid
+          : songid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ClickFavoriteImpl implements _ClickFavorite {
-  const _$ClickFavoriteImpl();
+  const _$ClickFavoriteImpl({required this.songid});
+
+  @override
+  final String songid;
 
   @override
   String toString() {
-    return 'ClickFavorite()';
+    return 'ClickFavorite(songid: $songid)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ClickFavoriteImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ClickFavoriteImpl &&
+            (identical(other.songid, songid) || other.songid == songid));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, songid);
+
+  /// Create a copy of ClickFavorite
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ClickFavoriteImplCopyWith<_$ClickFavoriteImpl> get copyWith =>
+      __$$ClickFavoriteImplCopyWithImpl<_$ClickFavoriteImpl>(this, _$identity);
 }
 
 abstract class _ClickFavorite implements ClickFavorite {
-  const factory _ClickFavorite() = _$ClickFavoriteImpl;
+  const factory _ClickFavorite({required final String songid}) =
+      _$ClickFavoriteImpl;
+
+  @override
+  String get songid;
+
+  /// Create a copy of ClickFavorite
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ClickFavoriteImplCopyWith<_$ClickFavoriteImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$FavoriteState {}
+mixin _$FavoriteState {
+  bool get isClickFavorite => throw _privateConstructorUsedError;
+
+  /// Create a copy of FavoriteState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $FavoriteStateCopyWith<FavoriteState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 abstract class $FavoriteStateCopyWith<$Res> {
   factory $FavoriteStateCopyWith(
           FavoriteState value, $Res Function(FavoriteState) then) =
       _$FavoriteStateCopyWithImpl<$Res, FavoriteState>;
+  @useResult
+  $Res call({bool isClickFavorite});
 }
 
 /// @nodoc
@@ -103,13 +175,29 @@ class _$FavoriteStateCopyWithImpl<$Res, $Val extends FavoriteState>
 
   /// Create a copy of FavoriteState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isClickFavorite = null,
+  }) {
+    return _then(_value.copyWith(
+      isClickFavorite: null == isClickFavorite
+          ? _value.isClickFavorite
+          : isClickFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$FavoriteStateImplCopyWith<$Res> {
+abstract class _$$FavoriteStateImplCopyWith<$Res>
+    implements $FavoriteStateCopyWith<$Res> {
   factory _$$FavoriteStateImplCopyWith(
           _$FavoriteStateImpl value, $Res Function(_$FavoriteStateImpl) then) =
       __$$FavoriteStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool isClickFavorite});
 }
 
 /// @nodoc
@@ -122,28 +210,66 @@ class __$$FavoriteStateImplCopyWithImpl<$Res>
 
   /// Create a copy of FavoriteState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isClickFavorite = null,
+  }) {
+    return _then(_$FavoriteStateImpl(
+      isClickFavorite: null == isClickFavorite
+          ? _value.isClickFavorite
+          : isClickFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$FavoriteStateImpl implements _FavoriteState {
-  const _$FavoriteStateImpl();
+  const _$FavoriteStateImpl({this.isClickFavorite = false});
+
+  @override
+  @JsonKey()
+  final bool isClickFavorite;
 
   @override
   String toString() {
-    return 'FavoriteState()';
+    return 'FavoriteState(isClickFavorite: $isClickFavorite)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FavoriteStateImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$FavoriteStateImpl &&
+            (identical(other.isClickFavorite, isClickFavorite) ||
+                other.isClickFavorite == isClickFavorite));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, isClickFavorite);
+
+  /// Create a copy of FavoriteState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FavoriteStateImplCopyWith<_$FavoriteStateImpl> get copyWith =>
+      __$$FavoriteStateImplCopyWithImpl<_$FavoriteStateImpl>(this, _$identity);
 }
 
 abstract class _FavoriteState implements FavoriteState {
-  const factory _FavoriteState() = _$FavoriteStateImpl;
+  const factory _FavoriteState({final bool isClickFavorite}) =
+      _$FavoriteStateImpl;
+
+  @override
+  bool get isClickFavorite;
+
+  /// Create a copy of FavoriteState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FavoriteStateImplCopyWith<_$FavoriteStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

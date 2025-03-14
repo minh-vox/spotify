@@ -41,4 +41,9 @@ class RepositoryImpl implements Repository {
       await _supabaseService.getPlayList(),
     );
   }
+
+  @override
+  Future<void> rmOrAddFavoriteSong({required String songid}) async {
+    await _supabaseService.rmOrAddFavoriteSong(songId: songid);
+  }
 }

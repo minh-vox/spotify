@@ -2,10 +2,34 @@ import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:pos/pos.dart';
 
-class SongWidget extends StatelessWidget {
+class SongWidget extends StatefulWidget {
   const SongWidget({super.key, required this.song});
 
   final SongEntity song;
+
+  @override
+  State<SongWidget> createState() => _SongWidgetState();
+}
+
+class _SongWidgetState extends State<SongWidget>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 5),
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +39,7 @@ class SongWidget extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => SongPlayPage(
-              song: song,
+              song: widget.song,
             ),
           ),
         );
@@ -30,15 +54,29 @@ class SongWidget extends StatelessWidget {
               flex: 5,
               child: Row(
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: SizedBox(
-                      width: 60,
-                      height: 60,
-                      child: Image.network(
-                        song.coverUrl,
-                        fit: BoxFit.cover,
-                      ),
+                  Container(
+                    height: 60,
+                    width: 60,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        RotationTransition(
+                          turns: _controller,
+                          child: ClipOval(
+                            child: Image.network(
+                              widget.song.coverUrl,
+                              width: 60,
+                              height: 60,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        const Icon(
+                          Icons.play_arrow_rounded,
+                          color: Color.fromARGB(255, 219, 217, 217),
+                          size: 30,
+                        ),
+                      ],
                     ),
                   ),
                   const SizedBox(width: 10),
@@ -49,7 +87,7 @@ class SongWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          song.title,
+                          widget.song.title,
                           style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -59,7 +97,7 @@ class SongWidget extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          song.artist,
+                          widget.song.artist,
                           style: const TextStyle(
                             fontSize: 16,
                             color: Colors.grey,
@@ -75,7 +113,7 @@ class SongWidget extends StatelessWidget {
             ),
             Expanded(
               child: Text(
-                song.duration.toString(),
+                widget.song.duration.toString(),
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -84,9 +122,9 @@ class SongWidget extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            const FavoriteButtonWidget(
-              isClicked: false,
-            )
+            FavoriteButtonWidget(
+              songid: widget.song.id,
+            ),
           ],
         ),
       ),

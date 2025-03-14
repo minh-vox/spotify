@@ -23,50 +23,62 @@ class SongPlayBloc extends Bloc<SongPlayEvent, SongPlayState> {
       }
     });
 
-    on<SongPlayerProgress>((event, emit) {
-      emit(state.copyWith(songPosition: event.position));
-    });
+    on<SongPlayerProgress>(_onSongPlayerProgress);
 
-    on<SongPlayerDurationChanged>((event, emit) {
-      emit(state.copyWith(songDuration: event.duration));
-    });
+    on<SongPlayerDurationChanged>(_onSongPlayerDurationChanged);
 
-    on<SongPlayerPlayPause>((event, emit) {
-      if (_audioPlayer.playing) {
-        _audioPlayer.pause();
-        emit(
-          state.copyWith(
-            isPlaying: false,
-          ),
-        );
-      } else {
-        _audioPlayer.play();
-        emit(
-          state.copyWith(
-            isPlaying: true,
-          ),
-        );
-      }
-    });
+    on<SongPlayerPlayPause>(_onSongPlayerPlayPause);
 
-    on<SongPlayerLoadSong>((event, emit) async {
-      emit(state.copyWith(isSongPlay: LoadSong.loading));
+    on<SongPlayerLoadSong>(_onSongPlayerLoadSong);
+  }
 
-      try {
-        await _audioPlayer.setUrl(event.songUrl);
-        emit(
-          state.copyWith(
-            songUrl: event.songUrl,
-            isPlaying: false,
-            isSongPlay: LoadSong.loaded,
-          ),
-        );
-      } catch (e) {
-        emit(
-          state.copyWith(isSongPlay: LoadSong.failure),
-        );
-      }
-    });
+  void _onSongPlayerProgress(
+      SongPlayerProgress event, Emitter<SongPlayState> emit) {
+    emit(state.copyWith(songPosition: event.position));
+  }
+
+  void _onSongPlayerDurationChanged(
+      SongPlayerDurationChanged event, Emitter<SongPlayState> emit) {
+    emit(state.copyWith(songDuration: event.duration));
+  }
+
+  void _onSongPlayerPlayPause(
+      SongPlayerPlayPause event, Emitter<SongPlayState> emit) {
+    if (_audioPlayer.playing) {
+      _audioPlayer.pause();
+      emit(
+        state.copyWith(
+          isPlaying: false,
+        ),
+      );
+    } else {
+      _audioPlayer.play();
+      emit(
+        state.copyWith(
+          isPlaying: true,
+        ),
+      );
+    }
+  }
+
+  Future<void> _onSongPlayerLoadSong(
+      SongPlayerLoadSong event, Emitter<SongPlayState> emit) async {
+    emit(state.copyWith(isSongPlay: LoadSong.loading));
+
+    try {
+      await _audioPlayer.setUrl(event.songUrl);
+      emit(
+        state.copyWith(
+          songUrl: event.songUrl,
+          isPlaying: false,
+          isSongPlay: LoadSong.loaded,
+        ),
+      );
+    } catch (e) {
+      emit(
+        state.copyWith(isSongPlay: LoadSong.failure),
+      );
+    }
   }
 
   @override
