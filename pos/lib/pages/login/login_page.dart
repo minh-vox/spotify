@@ -109,7 +109,7 @@ class _LoginPageState extends BasePageState<LoginPage, LoginPageBloc> {
                           Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const HomePage()),
+                                builder: (context) => const MainScreenView()),
                             (route) => false,
                           );
                         } else if (state.status == LoginStatus.failure &&

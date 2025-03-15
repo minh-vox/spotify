@@ -13,6 +13,7 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:pos/pages/home/bloc/home_page_bloc.dart' as _i767;
 import 'package:pos/pages/login/bloc/login_page_bloc.dart' as _i391;
+import 'package:pos/pages/main_screen/bloc/main_screen_bloc.dart' as _i401;
 import 'package:pos/pages/register/bloc/register_bloc.dart' as _i127;
 import 'package:pos/pages/song_play/bloc/song_play_bloc.dart' as _i229;
 import 'package:pos/widgets/favorite_button/bloc/favorite_bloc.dart' as _i577;
@@ -29,6 +30,7 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     gh.factory<_i229.SongPlayBloc>(() => _i229.SongPlayBloc());
+    gh.factory<_i401.MainScreenBloc>(() => _i401.MainScreenBloc());
     gh.factory<_i391.LoginPageBloc>(
         () => _i391.LoginPageBloc(gh<_i494.LogInUseCase>()));
     gh.factory<_i767.HomePageBloc>(() => _i767.HomePageBloc(

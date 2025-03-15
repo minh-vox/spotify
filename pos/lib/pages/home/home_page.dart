@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get_it/get_it.dart';
 
 import '../../pos.dart';
 
@@ -60,7 +59,6 @@ class _HomePageState extends BasePageState<HomePage, HomePageBloc>
           ),
         ),
       ),
-      bottomNavigationBar: const BasicBottomBar(),
       body: BlocBuilder<HomePageBloc, HomePageState>(
         builder: (context, state) {
           if (state.isLoadingSong == LoadSong.loading ||

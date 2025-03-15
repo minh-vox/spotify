@@ -15,45 +15,44 @@ class RegisterPageBloc extends Bloc<RegisterPageEvent, RegisterPageState> {
   RegisterPageBloc(
     this._registerUseCase,
   ) : super(const RegisterPageState()) {
-    on<RegisterPasswordVisibility>(
-      (event, emit) {
-        (event, emit) {
-          emit(state.copyWith(isPasswordObscured: !state.isPasswordObscured));
-        };
-      },
-    );
-
-    on<RegisterAccount>(
-      (event, emit) async {
-        emit(state.copyWith(status: RegisterStatus.loading, errorMessage: ""));
-
-        try {
-          await _registerUseCase.execute(
-            RegisterInput(
-              email: event.email.trim(),
-              password: event.password.trim(),
-              name: event.name.trim(),
-            ),
-          );
-
-          emit(state.copyWith(status: RegisterStatus.success));
-        } catch (e) {
-          String errorMessage = "Something went wrong. Please try again.";
-
-          if (e is AuthException) {
-            errorMessage = e.message; // Supabase trả về message cụ thể
-          } else if (e is TimeoutException) {
-            errorMessage = "Request timed out. Please check your connection.";
-          }
-
-          emit(state.copyWith(
-            status: RegisterStatus.failure,
-            errorMessage: errorMessage,
-          ));
-        }
-      },
-    );
+    on<RegisterPasswordVisibility>(_onRegisterPasswordVisibility);
+    on<RegisterAccount>(_onRegisterAccount);
   }
 
   final RegisterUseCase _registerUseCase;
+
+  Future<void> _onRegisterPasswordVisibility(
+      RegisterPasswordVisibility event, Emitter<RegisterPageState> emit) async {
+    emit(state.copyWith(isPasswordObscured: !state.isPasswordObscured));
+  }
+
+  Future<void> _onRegisterAccount(
+      RegisterAccount event, Emitter<RegisterPageState> emit) async {
+    emit(state.copyWith(status: RegisterStatus.loading, errorMessage: ""));
+
+    try {
+      await _registerUseCase.execute(
+        RegisterInput(
+          email: event.email.trim(),
+          password: event.password.trim(),
+          name: event.name.trim(),
+        ),
+      );
+
+      emit(state.copyWith(status: RegisterStatus.success));
+    } catch (e) {
+      String errorMessage = "Something went wrong. Please try again.";
+
+      if (e is AuthException) {
+        errorMessage = e.message; // Supabase trả về message cụ thể
+      } else if (e is TimeoutException) {
+        errorMessage = "Request timed out. Please check your connection.";
+      }
+
+      emit(state.copyWith(
+        status: RegisterStatus.failure,
+        errorMessage: errorMessage,
+      ));
+    }
+  }
 }
