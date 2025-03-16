@@ -42,6 +42,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/profile_icon.svg
   SvgGenImage get profileIcon => const SvgGenImage('assets/icons/profile_icon.svg');
 
+  /// File path: assets/icons/search_icon.svg
+  SvgGenImage get searchIcon => const SvgGenImage('assets/icons/search_icon.svg');
+
   /// File path: assets/icons/spotify_icon.svg
   SvgGenImage get spotifyIcon => const SvgGenImage('assets/icons/spotify_icon.svg');
 
@@ -62,6 +65,7 @@ class $AssetsIconsGen {
         iconSplash,
         moonIcon,
         profileIcon,
+        searchIcon,
         spotifyIcon,
         spotifyLogo,
         sunIcon
@@ -89,8 +93,12 @@ class $AssetsImagesGen {
   /// File path: assets/images/melody.png
   AssetGenImage get melody => const AssetGenImage('assets/images/melody.png');
 
+  /// File path: assets/images/profile_img.png
+  AssetGenImage get profileImg => const AssetGenImage('assets/images/profile_img.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [authBg, chooseModeBg, headphone, homeArtist, introBg, melody];
+  List<AssetGenImage> get values =>
+      [authBg, chooseModeBg, headphone, homeArtist, introBg, melody, profileImg];
 }
 
 class Assets {

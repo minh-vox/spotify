@@ -31,7 +31,7 @@ class _MainScreenState extends BasePageState<MainScreenView, MainScreenBloc> {
               bloc.add(ChangeTabEvent(index: index));
             },
             type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.blue,
+            selectedItemColor: Colors.green,
             unselectedItemColor: Colors.grey,
             items: [
               BottomNavigationBarItem(
@@ -41,8 +41,8 @@ class _MainScreenState extends BasePageState<MainScreenView, MainScreenBloc> {
               ),
               BottomNavigationBarItem(
                 icon: _buildIcon(
-                    Assets.icons.discoveryIcon.path, state.selectedIndex, 1),
-                label: 'Discover',
+                    Assets.icons.searchIcon.path, state.selectedIndex, 1),
+                label: 'Search',
               ),
               BottomNavigationBarItem(
                 icon: _buildIcon(
@@ -65,7 +65,7 @@ class _MainScreenState extends BasePageState<MainScreenView, MainScreenBloc> {
     return SvgPicture.asset(
       assetPath,
       colorFilter: ColorFilter.mode(
-        selectedIndex == index ? Colors.blue : Colors.grey,
+        selectedIndex == index ? Colors.green : Colors.grey,
         BlendMode.srcIn,
       ),
     );

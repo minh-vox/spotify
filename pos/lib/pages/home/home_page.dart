@@ -31,25 +31,6 @@ class _HomePageState extends BasePageState<HomePage, HomePageBloc>
           Assets.icons.spotifyIcon.path,
           height: 40,
         ),
-        leading: IconButton(
-          highlightColor: Colors.transparent,
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.03),
-              shape: BoxShape.circle,
-            ),
-            child: const Icon(
-              Icons.search_rounded,
-              size: 30,
-              color: Colors.black,
-            ),
-          ),
-        ),
         action: IconButton(
           onPressed: () {},
           highlightColor: Colors.transparent,
