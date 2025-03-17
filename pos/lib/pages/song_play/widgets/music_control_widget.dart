@@ -52,7 +52,10 @@ class _MusicControlWidgetState extends State<MusicControlWidget> {
   Widget _buildIconButton(IconData icon, {required VoidCallback onPressed}) {
     return IconButton(
       onPressed: () {},
-      icon: Icon(icon, size: 30, color: Colors.black54),
+      icon: Icon(
+        icon,
+        size: 30,
+      ),
     );
   }
 

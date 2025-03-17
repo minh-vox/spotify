@@ -43,7 +43,6 @@ class _SongPlayPageState extends BasePageState<SongPlayPage, SongPlayBloc> {
             child: const Icon(
               Icons.arrow_back_ios_new,
               size: 20,
-              color: Colors.black,
             ),
           ),
         ),

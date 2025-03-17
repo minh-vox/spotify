@@ -46,7 +46,6 @@ class _RegisterPageState extends BasePageState<RegisterPage, RegisterPageBloc> {
             child: const Icon(
               Icons.arrow_back_ios_new,
               size: 20,
-              color: Colors.white,
             ),
           ),
         ),
