@@ -1,4 +1,3 @@
-export 'application/theme_service.dart';
 export 'base/base_page_state.dart';
 export 'di/di_pos.config.dart';
 export 'di/di_pos.dart';
@@ -14,6 +13,7 @@ export 'pages/login/bloc/login_page_bloc.dart';
 export 'pages/login/login_page.dart';
 export 'pages/main_screen/bloc/main_screen_bloc.dart';
 export 'pages/main_screen/main_screen_view.dart';
+export 'pages/profile/bloc/theme_bloc.dart';
 export 'pages/profile/profile_pages.dart';
 export 'pages/profile/widgets/moon.dart';
 export 'pages/profile/widgets/star.dart';

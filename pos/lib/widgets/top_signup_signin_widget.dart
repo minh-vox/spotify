@@ -17,7 +17,7 @@ class TopSignupSigninWidget extends StatelessWidget {
         Text(
           title,
           style: const TextStyle(
-            fontSize: 25,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,

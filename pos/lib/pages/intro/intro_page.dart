@@ -9,82 +9,94 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 40,
-            vertical: 150,
-          ).copyWith(bottom: 50),
-          child: Column(
-            children: [
-              Image.asset(
-                Assets.icons.spotifyLogo.path,
-                height: 60,
+        child: Stack(
+          children: [
+            Image.asset(
+              Assets.images.introImg.path,
+              fit: BoxFit.cover,
+              width: double.infinity,
+            ),
+            Container(
+              color: Colors.black.withOpacity(0.15),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 40,
+                vertical: 150,
+              ).copyWith(bottom: 50),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  SvgPicture.asset(
+                    Assets.icons.spotifyLogoSvg.path,
+                    height: 60,
+                  ),
+                  const Text(
+                    'Millions of songs.\nFree on Spotify.',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 40),
+                  BasicAppButton(
+                    borderColor: Colors.white,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RegisterPage()),
+                      );
+                    },
+                    title: 'Sign up free',
+                  ),
+                  const SizedBox(height: 20),
+                  BasicAppButton(
+                    icon: SvgPicture.asset(
+                      Assets.icons.facebookIcon.path,
+                      height: 30,
+                    ),
+                    title: 'Continue with Facebook',
+                    backgroundColor: Colors.black,
+                    textColor: Colors.white,
+                    borderColor: Colors.white,
+                    onPressed: () {},
+                  ),
+                  const SizedBox(height: 10),
+                  BasicAppButton(
+                    icon: SvgPicture.asset(
+                      Assets.icons.googleIcon.path,
+                      height: 25,
+                    ),
+                    title: 'Continue with Google',
+                    onPressed: () {},
+                    backgroundColor: Colors.black,
+                    textColor: Colors.white,
+                    borderColor: Colors.white,
+                  ),
+                  const SizedBox(height: 10),
+                  BasicAppButton(
+                    icon: Container(),
+                    title: 'Log in',
+                    backgroundColor: Colors.black,
+                    textColor: Colors.white,
+                    borderColor: Colors.white,
+                    onPressed: () {
+                      // Navigator.pushNamed(context, '/login');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()),
+                      );
+                    },
+                  ),
+                ],
               ),
-              const Spacer(),
-              const Text(
-                'Millions of songs.\nFree on Spotify.',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black, // Chữ đen
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 40),
-              BasicAppButton(
-                borderColor: Colors.black,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const RegisterPage()),
-                  );
-                },
-                title: 'Sign up free',
-              ),
-              const SizedBox(height: 20),
-              BasicAppButton(
-                icon: SvgPicture.asset(
-                  Assets.icons.facebookIcon.path,
-                  height: 30,
-                ),
-                title: 'Continue with Facebook',
-                backgroundColor: Colors.white,
-                textColor: Colors.black,
-                borderColor: Colors.black,
-                onPressed: () {},
-              ),
-              const SizedBox(height: 10),
-              BasicAppButton(
-                icon: SvgPicture.asset(
-                  Assets.icons.googleIcon.path,
-                  height: 25,
-                ),
-                title: 'Continue with Google',
-                onPressed: () {},
-                backgroundColor: Colors.white,
-                textColor: Colors.black,
-                borderColor: Colors.black,
-              ),
-              const SizedBox(height: 10),
-              BasicAppButton(
-                icon: Container(),
-                title: 'Log in',
-                backgroundColor: Colors.white,
-                textColor: Colors.black,
-                borderColor: Colors.black,
-                onPressed: () {
-                  // Navigator.pushNamed(context, '/login');
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()),
-                  );
-                },
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

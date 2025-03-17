@@ -49,7 +49,10 @@ class $AssetsIconsGen {
   SvgGenImage get spotifyIcon => const SvgGenImage('assets/icons/spotify_icon.svg');
 
   /// File path: assets/icons/spotify_logo.png
-  AssetGenImage get spotifyLogo => const AssetGenImage('assets/icons/spotify_logo.png');
+  AssetGenImage get spotifyLogoPng => const AssetGenImage('assets/icons/spotify_logo.png');
+
+  /// File path: assets/icons/spotify_logo.svg
+  SvgGenImage get spotifyLogoSvg => const SvgGenImage('assets/icons/spotify_logo.svg');
 
   /// File path: assets/icons/sun_icon.svg
   SvgGenImage get sunIcon => const SvgGenImage('assets/icons/sun_icon.svg');
@@ -67,7 +70,8 @@ class $AssetsIconsGen {
         profileIcon,
         searchIcon,
         spotifyIcon,
-        spotifyLogo,
+        spotifyLogoPng,
+        spotifyLogoSvg,
         sunIcon
       ];
 }
@@ -90,6 +94,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/intro_bg.png
   AssetGenImage get introBg => const AssetGenImage('assets/images/intro_bg.png');
 
+  /// File path: assets/images/intro_img.png
+  AssetGenImage get introImg => const AssetGenImage('assets/images/intro_img.png');
+
   /// File path: assets/images/melody.png
   AssetGenImage get melody => const AssetGenImage('assets/images/melody.png');
 
@@ -98,7 +105,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [authBg, chooseModeBg, headphone, homeArtist, introBg, melody, profileImg];
+      [authBg, chooseModeBg, headphone, homeArtist, introBg, introImg, melody, profileImg];
 }
 
 class Assets {

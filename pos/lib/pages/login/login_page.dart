@@ -45,7 +45,7 @@ class _LoginPageState extends BasePageState<LoginPage, LoginPageBloc> {
             child: const Icon(
               Icons.arrow_back_ios_new,
               size: 20,
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
         ),

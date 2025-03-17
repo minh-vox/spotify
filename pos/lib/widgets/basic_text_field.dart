@@ -27,7 +27,7 @@ class BasicTextField extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(right: 20),
                   child: Icon(
-                    obscureText ? Icons.visibility : Icons.visibility_off,
+                    obscureText ? Icons.visibility_off : Icons.visibility,
                   ),
                 ),
               )
